@@ -7,7 +7,7 @@ export default function AdminLayout({ children }) {
     <html lang="en">
       <body>
         <HeaderDashboard />
-        <Coba>{children}</Coba>
+        {children}
       </body>
     </html>
   );
