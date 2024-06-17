@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Body({ title, data }) {
@@ -11,14 +12,20 @@ export default function Body({ title, data }) {
         }`}</h1>
         {data?.map((data) => (
           <div className="flex md:p-4 w-full h-full sm:my-4" key={data.id}>
-            <img
+            <Image
+              // fill={true}
+              quality={50}
+              width={200}
+              height={200}
               src={data.ImageURL}
               alt=""
               className="md:w-40 h-fit md:mr-6 sm:w-28 sm:mr-2"
             />
             <div className="">
               <Link href={`/post/${data.id}`}>
-                <p className="md:text-xl font-semibold mb-2">{data.Judul}</p>
+                <p className="md:text-xl sm:text-sm font-semibold mb-2">
+                  {data.Judul}
+                </p>
               </Link>
               <span className="flex items-center">
                 <p className="md:text-xl sm:text-xs text-white uppercase font-bold mb-2 bg-red-500 w-fit p-2 rounded-lg mr-4">

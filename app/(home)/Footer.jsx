@@ -11,7 +11,7 @@ export default function Footer() {
           >
             <img
               src="Logo RadarPekalonganBiru.png"
-              className="h-8"
+              className="w-8 h-fit"
               alt="Radar Pekalongan Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
