@@ -11,33 +11,32 @@ export default function Body({ title, data }) {
           title ? title : "Berita Terkini"
         }`}</h1>
         {data?.map((data) => (
-          <div className="flex md:p-4 w-full h-full sm:my-4" key={data.id}>
+          <div className="flex p-4 w-full h-full sm:py-4" key={data.id}>
             <Image
               // fill={true}
-              loader={false}
-              quality={50}
+              quality={40}
               width={200}
               height={200}
               src={data.ImageURL}
               alt=""
               className="md:w-40 h-fit md:mr-6 sm:w-28 sm:mr-2"
             />
-            <div className="">
+            <div className="w-fit h-fit">
               <Link href={`/post/${data.id}`}>
                 <p className="md:text-xl sm:text-sm font-semibold mb-2">
                   {data.Judul}
                 </p>
               </Link>
               <span className="flex items-center">
-                <p className="md:text-xl sm:text-xs text-white uppercase font-bold mb-2 bg-red-500 w-fit p-2 rounded-lg mr-4">
+                <p className="md:text-lg sm:text-xs text-white uppercase font-bold mb-2 bg-red-500 w-fit p-2 rounded-lg mr-4">
                   {data.Kategori}
                 </p>
-                <p className="font-bold sm:text-sm">
+                <p className="font-bold sm:text-xs md:text-sm">
                   {data.created_at.substring(0, 10)}
                 </p>
               </span>
-              <p className="md:text-sm sm:text-xs text-gray-400 font-semibold">
-                {data.Isi_Berita.substring(0, 120)}
+              <p className="md:text-sm sm:text-xs lg:text-lg text-gray-400 font-semibold">
+                {data.Isi_Berita.substring(0, 100)}
               </p>
             </div>
           </div>
