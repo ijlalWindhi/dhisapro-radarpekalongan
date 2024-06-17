@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -9,9 +10,10 @@ export default function Footer() {
             href={"/"}
             className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
-            <img
-              src="Logo RadarPekalonganBiru.png"
-              className="w-8 h-8"
+            <Image
+              src="/Logo RadarPekalonganBiru.png"
+              width={32}
+              height={32}
               alt="Radar Pekalongan Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">

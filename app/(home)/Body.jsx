@@ -21,9 +21,9 @@ export default function Body({ title, data }) {
               alt=""
               className="md:w-40 h-fit md:mr-6 sm:w-28 sm:mr-2"
             />
-            <div className="w-fit h-fit">
+            <div className="flex-col w-fit h-fit">
               <Link href={`/post/${data.id}`}>
-                <p className="md:text-xl sm:text-sm font-semibold mb-2">
+                <p className="text-xl sm:text-sm font-medium mb-2">
                   {data.Judul}
                 </p>
               </Link>
@@ -42,7 +42,7 @@ export default function Body({ title, data }) {
           </div>
         ))}
       </div>
-      <div className="h-full md:w-1/3">
+      <div className="w-full h-full md:w-1/3">
         <h2 className="text-lg font-bold">Berita Trending</h2>
         {data?.slice(0, 5).map((data, index) => (
           <ul
