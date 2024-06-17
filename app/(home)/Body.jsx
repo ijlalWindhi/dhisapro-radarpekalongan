@@ -14,6 +14,7 @@ export default function Body({ title, data }) {
           <div className="flex md:p-4 w-full h-full sm:my-4" key={data.id}>
             <Image
               // fill={true}
+              loader={false}
               quality={50}
               width={200}
               height={200}
