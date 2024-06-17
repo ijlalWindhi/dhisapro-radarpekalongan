@@ -19,13 +19,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between p-5 ">
-      <div className="w-1/6 max-w-1/5 h-fit">
+    <nav className="flex justify-between p-5 sm:w-screen">
+      <div className="w-1/6 h-fit sm:hidden">
         <Link href="/">
           <img src="Logo Radar Pekalongan 1.png"></img>
         </Link>
       </div>
-      <div className="flex place-content-center w-1/3">
+      <div className="flex place-content-center w-1/3 sm:w-2/3">
         <input
           type="text"
           className="ps-6 text-lg rounded-l-lg border-2 border-slate-200 outline-none w-full bg-slate-300 focus:ring-slate-500 focus:border-slate-500"
@@ -34,32 +34,34 @@ export default function Navbar() {
           onChange={(e) => setQuery(e.target.value)}
         />
         <Link href={`/search?search=${query}`} onClick={handleSearch}>
-          <AiOutlineSearch className="h-fit w-20 bg-slate-500 text-white rounded-r-lg p-2" />
+          <AiOutlineSearch className="h-fit w-20 bg-slate-500 text-white rounded-r-lg p-2 sm:w-8" />
         </Link>
       </div>
-      <ul className="flex">
-        <Link href={"https://web.facebook.com/radarpekalongan/"}>
+      <div className="sm:w-1/3">
+        <ul className="flex">
+          <Link href={"https://web.facebook.com/radarpekalongan/"}>
+            <li>
+              <AiFillFacebook className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-6" />
+            </li>
+          </Link>
           <li>
-            <AiFillFacebook className="w-8 h-8 text-blue-400 mx-2" />
+            <AiFillTwitterCircle className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-6" />
           </li>
-        </Link>
-        <li>
-          <AiFillTwitterCircle className="w-8 h-8 text-blue-400 mx-2" />
-        </li>
-        <Link href={"https://www.instagram.com/radarpekalongan/"}>
+          <Link href={"https://www.instagram.com/radarpekalongan/"}>
+            <li>
+              <AiFillInstagram className="w-8 h-8 text-pink-600 sm:mx-1 sm:w-6" />
+            </li>
+          </Link>
+          <Link href={"https://www.youtube.com/@Radarpekalonganonline"}>
+            <li>
+              <AiFillYoutube className="w-8 h-8 text-red-600 sm:mx-1 sm:w-6" />
+            </li>
+          </Link>
           <li>
-            <AiFillInstagram className="w-8 h-8 text-pink-600 mx-2" />
+            <AiOutlineWhatsApp className="w-8 h-8 text-green-500 sm:mx-1 sm:w-6" />
           </li>
-        </Link>
-        <Link href={"https://www.youtube.com/@Radarpekalonganonline"}>
-          <li>
-            <AiFillYoutube className="w-8 h-8 text-red-600 mx-2" />
-          </li>
-        </Link>
-        <li>
-          <AiOutlineWhatsApp className="w-8 h-8 text-green-500 mx-2" />
-        </li>
-      </ul>
+        </ul>
+      </div>
     </nav>
   );
 }
