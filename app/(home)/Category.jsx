@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function Category() {
   return (
-    <nav className="flex justify-center bg-slate-500 !overflow-auto xs:py-20">
+    <nav className="flex justify-center bg-slate-500 !overflow-auto ">
       <ul className="flex justify-evenly !sm:overflow-auto p-2 w-fit text-white">
         <Link href="/pekalongan">
           <li className="px-2">Pekalongan</li>

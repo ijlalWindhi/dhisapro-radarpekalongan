@@ -20,7 +20,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between p-5 sm:w-screen">
+    <header className="flex justify-between p-5">
       <div className="w-1/6 h-fit sm:hidden">
         <Link href="/">
           <Image
@@ -47,27 +47,27 @@ export default function Navbar() {
         <ul className="flex">
           <Link href={"https://web.facebook.com/radarpekalongan/"}>
             <li>
-              <AiFillFacebook className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-6" />
+              <AiFillFacebook className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
             </li>
           </Link>
           <li>
-            <AiFillTwitterCircle className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-6" />
+            <AiFillTwitterCircle className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
           </li>
           <Link href={"https://www.instagram.com/radarpekalongan/"}>
             <li>
-              <AiFillInstagram className="w-8 h-8 text-pink-600 sm:mx-1 sm:w-6" />
+              <AiFillInstagram className="w-8 h-8 text-pink-600 sm:mx-1 sm:w-4" />
             </li>
           </Link>
           <Link href={"https://www.youtube.com/@Radarpekalonganonline"}>
             <li>
-              <AiFillYoutube className="w-8 h-8 text-red-600 sm:mx-1 sm:w-6" />
+              <AiFillYoutube className="w-8 h-8 text-red-600 sm:mx-1 sm:w-4" />
             </li>
           </Link>
           <li>
-            <AiOutlineWhatsApp className="w-8 h-8 text-green-500 sm:mx-1 sm:w-6" />
+            <AiOutlineWhatsApp className="w-8 h-8 text-green-500 sm:mx-1 sm:w-4" />
           </li>
         </ul>
       </div>
-    </nav>
+    </header>
   );
 }

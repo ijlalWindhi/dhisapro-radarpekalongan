@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Body({ title, data }) {
   return (
     <div className="flex justify-center p-5 sm:flex-col">
-      <div className="h-full md:w-2/3 sm:w-screen">
+      <div className="h-full md:w-2/3">
         <h1 className="text-lg font-bold">{`${
           title ? title : "Berita Terkini"
         }`}</h1>
