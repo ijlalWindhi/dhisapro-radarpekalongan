@@ -4,7 +4,7 @@ import Body from "./Body";
 import supabase from "../config/supabaseConfig";
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     getData();
