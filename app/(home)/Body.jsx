@@ -14,16 +14,16 @@ export default function Body({ title, data }) {
           <div className="flex p-4 w-full h-full sm:py-4" key={data.id}>
             <Image
               // fill={true}
-              quality={40}
-              width={200}
-              height={200}
+              quality={30}
+              width={150}
+              height={150}
               src={data.ImageURL}
               alt=""
               className="md:w-40 h-fit md:mr-6 sm:w-28 sm:mr-2"
             />
             <div className="flex-col w-fit h-fit">
               <Link href={`/post/${data.id}`}>
-                <p className="text-xl sm:text-sm font-medium mb-2">
+                <p className="text-lg sm:text-sm font-medium mb-2">
                   {data.Judul}
                 </p>
               </Link>

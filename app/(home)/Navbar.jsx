@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -22,7 +23,12 @@ export default function Navbar() {
     <nav className="flex justify-between p-5 sm:w-screen">
       <div className="w-1/6 h-fit sm:hidden">
         <Link href="/">
-          <img src="Logo Radar Pekalongan 1.png"></img>
+          <Image
+            src="/Logo Radar Pekalongan 1.webp"
+            width={250}
+            height={250}
+            alt="Radar Pekalongan Logo 1"
+          />
         </Link>
       </div>
       <div className="flex place-content-center w-1/3 sm:w-2/3">
