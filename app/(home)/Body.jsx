@@ -16,7 +16,6 @@ export default function Body({ title, data }) {
             {data?.map((data) => (
               <div className="flex p-4 sm:py-4" key={data.id}>
                 <Image
-                  // fill={true}
                   quality={30}
                   width={150}
                   height={150}
