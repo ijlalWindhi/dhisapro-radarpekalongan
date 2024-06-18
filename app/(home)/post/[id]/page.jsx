@@ -35,14 +35,16 @@ export default function PagePost() {
     ?.filter((sentence) => sentence.trim() !== "");
 
   return (
-    <div className=" flex flex-col items-center ">
-      <h1 className="my-10 font-bold text-3xl">{dataBerita.Judul}</h1>
+    <div className="flex flex-col md:items-center ">
+      <h1 className="my-10 font-bold text-3xl sm:text-xl text-center">
+        {dataBerita.Judul}
+      </h1>
       <img
         src={dataBerita.ImageURL}
         alt=""
-        className="w-1/3 h-fit rounded-lg mb-10"
+        className="md:w-1/3 h-fit rounded-lg mb-10"
       />
-      <div className="mx-20 w-1/2 text-lg">
+      <div className="md:mx-auto md:w-1/2 sm:px-6 text-lg">
         {" "}
         {sentences?.map((sentence, index) => (
           <p key={index} className="my-6">
