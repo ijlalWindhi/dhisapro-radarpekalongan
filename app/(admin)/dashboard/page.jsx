@@ -23,7 +23,7 @@ export default function DashboardPage() {
     if (!checkToken) {
       router.push("/login");
     }
-  }, []);
+  }, [user]);
   return (
     <>
       <div className="h-screen w-full bg-slate-100 flex">

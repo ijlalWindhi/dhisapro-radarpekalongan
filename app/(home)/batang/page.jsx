@@ -5,7 +5,7 @@ import Body from "../Body";
 import supabase from "@/app/config/supabaseConfig";
 
 export default function PageBatang() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     getData();

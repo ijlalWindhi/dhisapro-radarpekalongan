@@ -36,7 +36,7 @@ export default function Body({ title, data }) {
                     </p>
                   </span>
                   <p className="md:text-sm sm:text-xs lg:text-lg text-gray-400 font-semibold">
-                    {data.Isi_Berita.substring(0, 100)}
+                    {data.Isi_Berita.substring(0, 100)}...
                   </p>
                 </div>
               </div>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Body from "../Body";
 import supabase from "@/app/config/supabaseConfig";
 export default function PageKendal() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     getData();
