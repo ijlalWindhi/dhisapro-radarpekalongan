@@ -35,7 +35,7 @@ export default function Body({ title, data }) {
                   />
                   <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                     <Link href={`/post/${data.id}`}>
-                      <p className="text-sm font-bold w-full h-fit">
+                      <p className="text-sm font-bold min-w-40 sm:min-w-28 w-full h-fit">
                         {data.Judul}
                       </p>
                     </Link>
@@ -47,9 +47,6 @@ export default function Body({ title, data }) {
                         {data.created_at.substring(0, 10)}
                       </p>
                     </span>
-                    {/* <p className="text-sm text-gray-400 w-full h-fit">
-                      {data.Isi_Berita?.substring(0, 100)}...
-                    </p> */}
                   </div>
                 </div>
               ))}
