@@ -63,6 +63,7 @@ export default function FormBerita({
           onChange={(e) => setIsiBerita(e.target.value)}
         />
       </div>
+      <input type="file" id="myFile" name="filename" />
       <div className="my-4">
         <label
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

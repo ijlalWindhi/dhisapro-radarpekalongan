@@ -4,22 +4,25 @@ import Body from "./Body";
 import supabase from "../config/supabaseConfig";
 
 export default function Home() {
-  const [data, setData] = useState(null);
+  const [dataBerita, setData] = useState(null);
 
   useEffect(() => {
     getData();
   }, []);
 
   async function getData() {
-    const { data } = await supabase.from("data-berita").select();
+    const { data } = await supabase
+      .from("data-berita")
+      .select()
+      .order("id", { ascending: false });
     setData(data);
   }
 
-  console.log(data);
+  console.log(dataBerita);
 
   return (
     <>
-      <Body data={data} />
+      <Body data={dataBerita} />
     </>
   );
 }

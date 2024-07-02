@@ -59,6 +59,14 @@ export default function PagePost() {
                 {sentence.trim()}.
               </p>
             ))}
+            <Image
+              quality={30}
+              width={150}
+              height={150}
+              src={dataBerita.ImageURL_2 ? dataBerita.ImageURL_2 : ""}
+              alt=""
+              className="w-40 sm:w-28 pr-4 h-fit"
+            />
           </div>
         </div>
       )}

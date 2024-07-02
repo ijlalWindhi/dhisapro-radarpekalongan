@@ -9,19 +9,20 @@ export default function TulisPage() {
   const [Kategori, setKategori] = useState("");
   const [Isi_Berita, setIsiBerita] = useState("");
   const [ImageURL, setImageUrl] = useState("");
+  const [ImageURL_2, setImageURL_2] = useState("");
   const [formError, setFormError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!Judul || !Isi_Berita || !ImageURL || !Kategori) {
+    if (!Judul || !Isi_Berita || !ImageURL || !Kategori || !ImageURL_2) {
       setFormError("Please fill in all the fields correctly.");
       return;
     }
 
     const { data, error } = await supabase
       .from("data-berita")
-      .insert([{ Isi_Berita, Judul, ImageURL, Kategori }])
+      .insert([{ Isi_Berita, Judul, ImageURL, Kategori, ImageURL_2 }])
       .select();
 
     if (error) {
@@ -53,6 +54,35 @@ export default function TulisPage() {
 
     if (data || publicURL) {
       setImageUrl(
+        `https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/${image.name}`
+      );
+    }
+
+    if (error) {
+      console.log(error);
+    }
+
+    //  (formData = { ...formData, image_url: publicURL })
+  };
+
+  const handleFilesUploadKedua = async (e) => {
+    const image = e.target.files[0];
+
+    const { data, error } = await supabase.storage
+      .from("news-image")
+      .upload(`/${image.name}`, image, {
+        cacheControl: "3600",
+        upsert: false,
+      });
+
+    const { publicURL } = await supabase.storage
+      .from("news-image")
+      .getPublicUrl(`/${image.name}`);
+
+    console.log(publicURL);
+
+    if (data || publicURL) {
+      setImageURL_2(
         `https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/${image.name}`
       );
     }
@@ -126,7 +156,7 @@ export default function TulisPage() {
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 htmlFor="file_input"
               >
-                Upload Gambar
+                Upload Gambar Thumbnail
               </label>
               <input
                 className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -134,6 +164,21 @@ export default function TulisPage() {
                 type="file"
                 accept="image/*"
                 onChange={(e) => handleFilesUpload(e)}
+              />
+            </div>
+            <div className="my-4">
+              <label
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="file_input"
+              >
+                Upload Gambar Tengah
+              </label>
+              <input
+                className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                id="file_input"
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleFilesUploadKedua(e)}
               />
             </div>
             <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
