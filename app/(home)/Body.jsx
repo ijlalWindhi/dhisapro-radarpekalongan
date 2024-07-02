@@ -34,10 +34,11 @@ export default function Body({ title, data }) {
                     className="min-w-40 w-40 sm:min-w-28 pr-4 h-fit"
                   />
                   <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                    <Link href={`/post/${data.id}`}>
-                      <p className="text-sm font-bold min-w-40 sm:min-w-28 sm:min-h-20">
-                        {data.Judul}
-                      </p>
+                    <Link
+                      href={`/post/${data.id}`}
+                      className="min-w-40 sm:min-w-28 min-h-20"
+                    >
+                      <p className="text-sm font-bold ">{data.Judul}</p>
                     </Link>
                     <span className="flex items-center w-full h-full">
                       <p className="md:text-md sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
