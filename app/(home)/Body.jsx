@@ -47,9 +47,9 @@ export default function Body({ title, data }) {
                         {data.created_at.substring(0, 10)}
                       </p>
                     </span>
-                    <p className="text-sm text-gray-400 w-full h-fit">
+                    {/* <p className="text-sm text-gray-400 w-full h-fit">
                       {data.Isi_Berita?.substring(0, 100)}...
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               ))}
