@@ -24,7 +24,7 @@ export default function Body({ title, data }) {
                 title ? title : "Berita Terkini"
               }`}</h1>
               {currentPost?.map((data) => (
-                <div className="flex p-4 sm:py-4" key={data.id}>
+                <div className="flex" key={data.id}>
                   <Image
                     quality={30}
                     width={150}
