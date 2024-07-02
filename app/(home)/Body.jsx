@@ -35,7 +35,7 @@ export default function Body({ title, data }) {
                   />
                   <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                     <Link href={`/post/${data.id}`}>
-                      <p className="text-sm font-bold min-w-40 sm:min-w-28 w-full h-fit">
+                      <p className="text-sm font-bold min-w-40 sm:min-w-28 sm:min-h-20">
                         {data.Judul}
                       </p>
                     </Link>
