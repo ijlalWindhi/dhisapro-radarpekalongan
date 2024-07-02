@@ -39,7 +39,7 @@ export default function Body({ title, data }) {
                         {data.Judul}
                       </p>
                     </Link>
-                    <span className="flex items-center">
+                    <span className="flex items-center w-full h-full">
                       <p className="md:text-md sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
                         {data.Kategori}
                       </p>
