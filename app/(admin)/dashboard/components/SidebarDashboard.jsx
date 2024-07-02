@@ -5,7 +5,7 @@ import { AiOutlineBars, AiFillEdit, AiOutlineLogout } from "react-icons/ai";
 export default function SidebarDashboard() {
   const handleLogout = () => {
     localStorage.removeItem("sb-zdgnipjmpjiqktbpdvjj-auth-token");
-    window.location.reload();
+    window.location.replace("/dashboard");
 
     alert("Berhasil keluar");
   };

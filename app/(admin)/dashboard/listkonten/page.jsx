@@ -5,9 +5,17 @@ import SidebarDashboard from "../components/SidebarDashboard";
 import { useEffect, useState } from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import Link from "next/link";
+import Pagination from "@/app/(home)/components/Pagination";
 
 export default function ListKonten() {
   const [news, setNews] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(8);
+
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPost = news?.slice(firstPostIndex, lastPostIndex);
 
   useEffect(() => {
     getData();
@@ -19,19 +27,26 @@ export default function ListKonten() {
   }
 
   const handleDelete = async (id) => {
-    const { data, error } = await supabase
-      .from("data-berita")
-      .delete()
-      .eq("id", id)
-      .select();
+    if (confirm("Are you sure you want to delete?")) {
+      // Save it!
+      const { data, error } = await supabase
+        .from("data-berita")
+        .delete()
+        .eq("id", id)
+        .select();
 
-    if (error) {
-      console.log(error);
-    }
-    if (data) {
-      alert("Success deleting data");
-      console.log(data);
-      window.location.reload();
+      if (error) {
+        console.log(error);
+      }
+      if (data) {
+        alert("Success deleting data");
+        console.log(data);
+        window.location.reload();
+      }
+      console.log("Thing was saved to the database.");
+    } else {
+      // Do nothing!
+      console.log("Thing was not saved to the database.");
     }
   };
   return (
@@ -58,7 +73,7 @@ export default function ListKonten() {
                 </tr>
               </thead>
               <tbody>
-                {news.map((data, index) => (
+                {currentPost.map((data, index) => (
                   <tr
                     className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                     key={data.id}
@@ -86,6 +101,11 @@ export default function ListKonten() {
               </tbody>
             </table>
           </div>
+          <Pagination
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+            currentPost={currentPost}
+          />
         </div>
       </div>
     </>

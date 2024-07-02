@@ -8,13 +8,11 @@ import Pagination from "./components/Pagination";
 
 export default function Body({ title, data }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(10);
+  const [postPerPage, setPostPerPage] = useState(8);
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
   const currentPost = data?.slice(firstPostIndex, lastPostIndex);
-
-  console.log(currentPost);
 
   return (
     <>
@@ -40,14 +38,14 @@ export default function Body({ title, data }) {
                       <p className="text-sm font-bold">{data.Judul}</p>
                     </Link>
                     <span className="flex items-center">
-                      <p className="md:text-lg sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
+                      <p className="md:text-md sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
                         {data.Kategori}
                       </p>
                       <p className="font-bold sm:text-xs md:text-sm">
                         {data.created_at.substring(0, 10)}
                       </p>
                     </span>
-                    <p className="text-sm text-gray-400 font-semibold">
+                    <p className="text-sm text-gray-400">
                       {data.Isi_Berita?.substring(0, 100)}...
                     </p>
                   </div>
@@ -73,6 +71,7 @@ export default function Body({ title, data }) {
             setCurrentPage={setCurrentPage}
             currentPage={currentPage}
             currentPost={currentPost}
+            lenght={currentPost?.lenght}
           />
         </div>
       ) : (
