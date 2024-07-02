@@ -31,9 +31,9 @@ export default function Body({ title, data }) {
                     height={150}
                     src={data.ImageURL ? data.ImageURL : ""}
                     alt=""
-                    className="min-w-40 w-40 sm:min-w-28 pr-4 h-fit min-w"
+                    className="min-w-40 w-40 sm:min-w-28 pr-4 h-fit"
                   />
-                  <div className="flex-col w-fit h-fit">
+                  <div className="flex-col min-w-40 w-40 sm:min-w-28 pr-4 h-fit ">
                     <Link href={`/post/${data.id}`}>
                       <p className="text-sm font-bold">{data.Judul}</p>
                     </Link>
