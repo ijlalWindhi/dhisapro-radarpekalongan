@@ -31,7 +31,7 @@ export default function Body({ title, data }) {
                     height={150}
                     src={data.ImageURL ? data.ImageURL : ""}
                     alt=""
-                    className="w-40 sm:w-28 pr-4 h-fit"
+                    // className="w-40 sm:w-28 pr-4 h-fit"
                   />
                   <div className="flex-col w-fit h-fit">
                     <Link href={`/post/${data.id}`}>
