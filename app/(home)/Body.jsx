@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ContentLoader from "./components/ContentLoader";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Pagination from "./components/Pagination";
 
 export default function Body({ title, data }) {
@@ -24,29 +24,34 @@ export default function Body({ title, data }) {
                 title ? title : "Berita Terkini"
               }`}</h1>
               {data?.slice(firstPostIndex, lastPostIndex).map((data) => (
-                <div className="flex p-4 sm:py-4" key={data.id}>
-                  <Image
-                    quality={30}
-                    width={150}
-                    height={150}
-                    src={data.ImageURL ? data.ImageURL : ""}
-                    alt=""
-                    className="min-w-40 sm:min-w-28 pr-4 h-fit"
-                  />
-                  <div className="flex-col">
-                    <Link href={`/post/${data.id}`} className="font-semibold ">
-                      {data.Judul}
-                    </Link>
-                    <span className="flex items-center">
-                      <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
-                        {data.Kategori}
-                      </p>
-                      <p className="font-bold text-sm">
-                        {data.created_at.substring(0, 10)}
-                      </p>
-                    </span>
+                <Suspense key={data.id}>
+                  <div className="flex p-4 sm:py-4">
+                    <Image
+                      quality={30}
+                      width={150}
+                      height={150}
+                      src={data.ImageURL ? data.ImageURL : ""}
+                      alt=""
+                      className="min-w-40 sm:min-w-28 pr-4 h-fit"
+                    />
+                    <div className="flex-col">
+                      <Link
+                        href={`/post/${data.id}`}
+                        className="font-semibold "
+                      >
+                        {data.Judul}
+                      </Link>
+                      <span className="flex items-center">
+                        <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
+                          {data.Kategori}
+                        </p>
+                        <p className="font-bold text-sm">
+                          {data.created_at.substring(0, 10)}
+                        </p>
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Suspense>
               ))}
             </div>
             <div className="w-full h-full md:w-1/3">
