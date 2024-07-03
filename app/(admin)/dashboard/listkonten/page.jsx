@@ -7,22 +7,24 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import Link from "next/link";
 import Pagination from "@/app/(home)/components/Pagination";
 
+const ITEMS_PER_PAGE = 6; // Number of items per page
+
 export default function ListKonten() {
   const [news, setNews] = useState([]);
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(8);
-
-  const lastPostIndex = currentPage * postPerPage;
-  const firstPostIndex = lastPostIndex - postPerPage;
-  const currentPost = news?.slice(firstPostIndex, lastPostIndex);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [page]);
 
   async function getData() {
-    const { data } = await supabase.from("data-berita").select();
+    const from = (page - 1) * ITEMS_PER_PAGE;
+    const to = page * ITEMS_PER_PAGE - 1;
+    const { data } = await supabase
+      .from("data-berita")
+      .select()
+      .range(from, to)
+      .order("id", { ascending: false });
     setNews(data);
   }
 
@@ -49,6 +51,16 @@ export default function ListKonten() {
       console.log("Thing was not saved to the database.");
     }
   };
+
+  const handleNext = () => {
+    setPage(page + 1);
+  };
+
+  const handlePrevious = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
   return (
     <>
       <div className="h-screen w-full bg-slate-100 flex">
@@ -73,7 +85,7 @@ export default function ListKonten() {
                 </tr>
               </thead>
               <tbody>
-                {currentPost.map((data, index) => (
+                {news.map((data, index) => (
                   <tr
                     className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                     key={data.id}
@@ -101,11 +113,7 @@ export default function ListKonten() {
               </tbody>
             </table>
           </div>
-          <Pagination
-            setCurrentPage={setCurrentPage}
-            currentPage={currentPage}
-            currentPost={currentPost}
-          />
+          <Pagination handleNext={handleNext} handlePrevious={handlePrevious} />
         </div>
       </div>
     </>
