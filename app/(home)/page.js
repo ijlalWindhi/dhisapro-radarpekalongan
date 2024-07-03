@@ -12,7 +12,7 @@ export default function Home() {
 
   async function getData() {
     const { data } = await supabase
-      .from("data-berita")
+      .from("data-berita_duplicate")
       .select()
       .order("id", { ascending: false });
     setData(data);
