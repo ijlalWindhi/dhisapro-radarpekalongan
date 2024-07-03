@@ -218,10 +218,10 @@ export default function Body({
           <div className="container md:mx-auto">
             <h2 className="font-semibold">VIDEO</h2>
             <div>
-              <iframe
+              {/* <iframe
                 src="https://www.youtube.com/embed/dHsEi__-zf0&pp=ygUQcmFkYXIgcGVrYWxvbmdhbg%3D%3D"
                 frameborder="0"
-              ></iframe>
+              ></iframe> */}
             </div>
           </div>
         </div>
