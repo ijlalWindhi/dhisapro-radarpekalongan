@@ -24,7 +24,7 @@ export default function Body({ title, data }) {
                 title ? title : "Berita Terkini"
               }`}</h1>
               {data?.slice(firstPostIndex, lastPostIndex).map((data) => (
-                <Suspense key={data.id}>
+                <Suspense key={data.id} fallback={<ContentLoader />}>
                   <div className="flex p-4 sm:py-4">
                     <Image
                       quality={30}
