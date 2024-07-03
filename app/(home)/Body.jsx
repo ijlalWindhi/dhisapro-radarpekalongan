@@ -3,17 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import ContentLoader from "./components/ContentLoader";
-import { useState } from "react";
 import Pagination from "./components/Pagination";
 
-export default function Body({ title, data }) {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(8);
-
-  const lastPostIndex = currentPage * postPerPage;
-  const firstPostIndex = lastPostIndex - postPerPage;
-  // const currentPost = data?.slice(firstPostIndex, lastPostIndex);
-
+export default function Body({
+  title,
+  data,
+  setPage,
+  page,
+  getData,
+  handleNext,
+  handlePrevious,
+}) {
   return (
     <>
       {data ? (
@@ -23,7 +23,7 @@ export default function Body({ title, data }) {
               <h1 className="text-lg font-bold">{`${
                 title ? title : "Berita Terkini"
               }`}</h1>
-              {data?.slice(firstPostIndex, lastPostIndex).map((data) => (
+              {data.map((data) => (
                 <div className="flex p-4 sm:py-4" key={data.id}>
                   <Image
                     quality={30}
@@ -65,9 +65,12 @@ export default function Body({ title, data }) {
             </div>
           </div>
           <Pagination
-            setCurrentPage={setCurrentPage}
-            currentPage={currentPage}
-            currentPost={data?.slice(firstPostIndex, lastPostIndex)}
+            setPage={setPage}
+            page={page}
+            getData={getData}
+            handleNext={handleNext}
+            handlePrevious={handlePrevious}
+
             // lenght={currentPost?.lenght}
           />
         </div>
