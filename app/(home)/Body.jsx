@@ -24,7 +24,7 @@ export default function Body({ title, data }) {
                 title ? title : "Berita Terkini"
               }`}</h1>
               {currentPost?.map((data) => (
-                <div className="flex" key={data.id}>
+                <div className="flex p-4 sm:py-4" key={data.id}>
                   <Image
                     quality={30}
                     width={150}
@@ -36,9 +36,9 @@ export default function Body({ title, data }) {
                   <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                     <Link
                       href={`/post/${data.id}`}
-                      className="min-w-40 sm:min-w-28 min-h-20"
+                      className="min-w-40 sm:min-w-28 min-h-20 text-sm font-semibold "
                     >
-                      <p className="text-sm font-semibold ">{data.Judul}</p>
+                      {data.Judul}
                     </Link>
                     <span className="flex items-center w-full h-full">
                       <p className="md:text-md sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
