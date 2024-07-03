@@ -11,18 +11,20 @@ export default function Home() {
   }, []);
 
   async function getData() {
+    let isMounted = true; // Flag to track if the component is mounted
     const { data } = await supabase
       .from("data-berita")
       .select()
       .order("id", { ascending: false });
-    setData(data);
+    if (isMounted && !error) {
+      // Check if the component is still mounted
+      setData(data);
+    }
   }
 
   return (
     <>
-      <Suspense>
-        <Body data={dataBerita} />
-      </Suspense>
+      <Body data={dataBerita} />
     </>
   );
 }
