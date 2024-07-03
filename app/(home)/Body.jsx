@@ -12,7 +12,7 @@ export default function Body({ title, data }) {
 
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
-  const currentPost = data?.slice(firstPostIndex, lastPostIndex);
+  // const currentPost = data?.slice(firstPostIndex, lastPostIndex);
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function Body({ title, data }) {
               <h1 className="text-lg font-bold">{`${
                 title ? title : "Berita Terkini"
               }`}</h1>
-              {currentPost?.map((data) => (
+              {data?.slice(firstPostIndex, lastPostIndex).map((data) => (
                 <div className="flex p-4 sm:py-4" key={data.id}>
                   <Image
                     quality={30}
@@ -31,20 +31,17 @@ export default function Body({ title, data }) {
                     height={150}
                     src={data.ImageURL ? data.ImageURL : ""}
                     alt=""
-                    className="min-w-40 w-40 sm:min-w-28 pr-4 h-fit"
+                    className="min-w-40 sm:min-w-28 pr-4 h-fit"
                   />
                   <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                    <Link
-                      href={`/post/${data.id}`}
-                      className="min-w-40 sm:min-w-28 min-h-20 text-sm font-semibold "
-                    >
+                    <Link href={`/post/${data.id}`} className="font-semibold ">
                       {data.Judul}
                     </Link>
-                    <span className="flex items-center w-full h-full">
-                      <p className="md:text-md sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
+                    <span className="flex items-center">
+                      <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
                         {data.Kategori}
                       </p>
-                      <p className="font-bold sm:text-xs md:text-sm">
+                      <p className="font-bold text-sm">
                         {data.created_at.substring(0, 10)}
                       </p>
                     </span>
@@ -70,8 +67,8 @@ export default function Body({ title, data }) {
           <Pagination
             setCurrentPage={setCurrentPage}
             currentPage={currentPage}
-            currentPost={currentPost}
-            lenght={currentPost?.lenght}
+            currentPost={data?.slice(firstPostIndex, lastPostIndex)}
+            // lenght={currentPost?.lenght}
           />
         </div>
       ) : (
