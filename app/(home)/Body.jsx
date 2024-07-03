@@ -126,6 +126,17 @@ export default function Body({
                         />
                       </div>
                       <div>halo</div>
+                      <div className="container md:mx-auto">
+                        <h2 className="font-semibold">VIDEO</h2>
+                        <div className="bg-yellow-200 w-200 h-30">
+                          <span className="bg-yellow-200 w-200 h-30"></span>
+                        </div>
+                      </div>
+                      <div className="container md:mx-auto flex justify-between">
+                        <h2 className="font-semibold">VIDEO</h2>
+                        <h2 className="font-semibold">VIDEO</h2>
+                        <h2 className="font-semibold">VIDEO</h2>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -202,6 +213,20 @@ export default function Body({
                     </ul>
                   ))}
                 </div>
+                <div>
+                  <h2 className="text-lg font-bold">Pilihan</h2>
+                  {data?.slice(0, 5).map((data, index) => (
+                    <ul
+                      className=" text-black p-4 flex cursor-pointer"
+                      key={data.id}
+                    >
+                      {index + 1}
+                      <Link href={`/post/${data.id}`}>
+                        <li className="mx-2">{data.Judul}</li>
+                      </Link>
+                    </ul>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -214,15 +239,6 @@ export default function Body({
 
               // lenght={currentPost?.lenght}
             /> */}
-          </div>
-          <div className="container md:mx-auto">
-            <h2 className="font-semibold">VIDEO</h2>
-            <div>
-              {/* <iframe
-                src="https://www.youtube.com/embed/dHsEi__-zf0&pp=ygUQcmFkYXIgcGVrYWxvbmdhbg%3D%3D"
-                frameborder="0"
-              ></iframe> */}
-            </div>
           </div>
         </div>
       ) : (
