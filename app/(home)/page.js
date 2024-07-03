@@ -18,11 +18,11 @@ export default function Home() {
     setData(data);
   }
 
-  console.log(dataBerita);
-
   return (
     <>
-      <Body data={dataBerita} />
+      <Suspense>
+        <Body data={dataBerita} />
+      </Suspense>
     </>
   );
 }
