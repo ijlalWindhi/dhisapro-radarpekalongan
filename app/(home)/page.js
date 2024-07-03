@@ -17,7 +17,7 @@ export default function Home() {
     const from = (page - 1) * ITEMS_PER_PAGE;
     const to = page * ITEMS_PER_PAGE - 1;
     const { data } = await supabase
-      .from("data-berita_duplicate")
+      .from("data-berita")
       .select()
       .range(from, to)
       .order("id", { ascending: false });
