@@ -25,9 +25,9 @@ export default function Body({
         <div>
           <div className="container md:mx-auto">
             {/* banner 1 */}
-            <BannerIklan src={"/iklan_banner_satu.jpg"} />
+            <BannerIklan src={"/iklan_banner_satu.webp"} />
             {/* banner 2 */}
-            <BannerIklan src={"/iklan_banner_dua.png"} />
+            <BannerIklan src={"/iklan_banner_dua.webp"} />
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
                 <Carousel />
@@ -64,7 +64,7 @@ export default function Body({
                     </div>
                   ))}
                   <div className="flex justify-center w-full md:p-4">
-                    <BannerIklan src={"/BANNER_DPRD_KOTA.jpg"} />
+                    <BannerIklan src={"/BANNER_DPRD_KOTA.webp"} />
                   </div>
                   <div>
                     <div className="h-full ">
@@ -97,7 +97,7 @@ export default function Body({
                         </div>
                       ))}
                       <div className="flex justify-center w-full md:p-4">
-                        <BannerIklan src={"/BANNER_BATANG.jpg"} />
+                        <BannerIklan src={"/BANNER_BATANG.webp"} />
                       </div>
                     </div>
                   </div>
