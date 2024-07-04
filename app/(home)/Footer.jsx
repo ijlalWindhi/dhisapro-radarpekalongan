@@ -1,5 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  AiFillFacebook,
+  AiFillInstagram,
+  AiFillTwitterCircle,
+  AiFillYoutube,
+  AiOutlineSearch,
+  AiOutlineWhatsApp,
+} from "react-icons/ai";
 
 export default function Footer() {
   return (
@@ -47,6 +55,210 @@ export default function Footer() {
             </Link>
           </li>
         </ul>
+      </div>
+      <div className="bg-gray-100 p-6">
+        <div className="container mx-auto">
+          <div className="flex flex-wrap justify-between items-center">
+            {/* Logo and Social Media */}
+            <div className="w-full md:w-1/3 mb-4 md:mb-0">
+              <div className="flex space-x-4">
+                <Link href={"https://web.facebook.com/radarpekalongan/"}>
+                  <AiFillFacebook className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
+                </Link>
+                <Link href="#">
+                  <AiFillTwitterCircle className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
+                </Link>
+                <Link href={"https://www.youtube.com/@Radarpekalonganonline"}>
+                  <AiFillYoutube className="w-8 h-8 text-red-600 sm:mx-1 sm:w-4" />
+                </Link>
+                <Link href={"https://www.instagram.com/radarpekalongan/"}>
+                  <AiFillInstagram className="w-8 h-8 text-pink-600 sm:mx-1 sm:w-4" />
+                </Link>
+                <Link href="#">
+                  <AiOutlineWhatsApp className="w-8 h-8 text-green-500 sm:mx-1 sm:w-4" />
+                </Link>
+              </div>
+              <div className="mt-4 bg-gray-200 p-2 rounded-md">
+                <p className="text-xs">Terverifikasi Dewan Pers</p>
+                <p className="text-xs">No: 632/DP-Verifikasi/K/XII/2020</p>
+              </div>
+            </div>
+
+            {/* Network Links */}
+            <div className="w-full md:w-2/3">
+              <h2 className="text-xl font-semibold mb-4">NETWORK</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm">
+                <ul>
+                  <li>
+                    <Link
+                      href="https://bantentv.com/"
+                      className="text-blue-600"
+                    >
+                      Banten TV
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://www.bantenraya.com/"
+                      className="text-blue-600"
+                    >
+                      Banten Raya
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://www.radarbanten.co.id/"
+                      className="text-blue-600"
+                    >
+                      Radar Banten
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://radargarut.jabarekspres.com/"
+                      className="text-blue-600"
+                    >
+                      Radar Garut
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://sukabumi.jabarekspres.com/"
+                      className="text-blue-600"
+                    >
+                      Sukabumi
+                    </Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link
+                      href="https://sumedang.jabarekspres.com/"
+                      className="text-blue-600"
+                    >
+                      Sumedang
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://pasundanekspres.id/"
+                      className="text-blue-600"
+                    >
+                      Pasundan Ekspres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://jabarekspres.com/"
+                      className="text-blue-600"
+                    >
+                      Jabar Ekspres
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://iknpos.id/" className="text-blue-600">
+                      IKN Pos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="https://fin.co.id/" className="text-blue-600">
+                      FIN
+                    </Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link
+                      href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
+                      className="text-blue-600"
+                    >
+                      Kepulauan Riau
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
+                      className="text-blue-600"
+                    >
+                      Riau
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
+                      className="text-blue-600"
+                    >
+                      Sumut
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
+                      className="text-blue-600"
+                    >
+                      Sumatera Barat
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
+                      className="text-blue-600"
+                    >
+                      Aceh
+                    </Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link
+                      href="https://radarpena.disway.id/"
+                      className="text-blue-600"
+                    >
+                      Radar Pena
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://pontianakinfo.disway.id"
+                      className="text-blue-600"
+                    >
+                      Pontianak Info
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://silamparitv.disway.id/"
+                      className="text-blue-600"
+                    >
+                      SilampariTV
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://okinews.disway.id/"
+                      className="text-blue-600"
+                    >
+                      OKINEWS
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://tangerangekspres.disway.id"
+                      className="text-blue-600"
+                    >
+                      Tangerang Ekspres
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 text-center">
+            <Link href="#" className="text-blue-600">
+              Lihat Semua
+            </Link>
+          </div>
+        </div>
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">

@@ -4,6 +4,8 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import ContentLoader from "../../components/ContentLoader";
 import Image from "next/image";
+import CatatanDisway from "../../components/CatatanDisway";
+import Terpopuler from "../../components/Terpopuler";
 
 export default function PagePost() {
   const [dataBerita, setDataBerita] = useState(null);
@@ -40,33 +42,41 @@ export default function PagePost() {
     <>
       {!dataBerita && <ContentLoader />}
       {dataBerita && (
-        <div className="flex flex-col md:items-center ">
-          <h1 className="my-10 font-bold text-3xl sm:text-xl text-center">
-            {dataBerita.Judul}
-          </h1>
-          <Image
-            quality={50}
-            width={500}
-            height={500}
-            src={dataBerita.ImageURL}
-            alt=""
-            className="md:w-1/3 h-fit rounded-lg mb-10"
-          />
-          <div className="md:mx-auto md:w-1/2 sm:px-6 text-lg">
-            {" "}
-            {sentences?.map((sentence, index) => (
-              <p key={index} className="my-6">
-                {sentence.trim()}.
-              </p>
-            ))}
-            <Image
-              quality={30}
-              width={150}
-              height={150}
-              src={dataBerita.ImageURL_2 ? dataBerita.ImageURL_2 : ""}
-              alt=""
-              className="w-40 sm:w-28 pr-4 h-fit"
-            />
+        <div className="container md:mx-auto">
+          <div className="flex p-5 sm:flex-col">
+            <div className="flex flex-col w-2/3 md:items-center ">
+              <h1 className=" font-bold text-2xl sm:text-xl text-center">
+                {dataBerita.Judul}
+              </h1>
+              <Image
+                quality={50}
+                width={500}
+                height={500}
+                src={dataBerita.ImageURL}
+                alt=""
+                className="h-fit rounded-lg mb-10"
+              />
+              <div className="text-lg">
+                {" "}
+                {sentences?.map((sentence, index) => (
+                  <p key={index} className="">
+                    {sentence}.
+                  </p>
+                ))}
+                <Image
+                  quality={30}
+                  width={150}
+                  height={150}
+                  src={dataBerita.ImageURL_2 ? dataBerita.ImageURL_2 : ""}
+                  alt=""
+                  className="w-40 sm:w-28 pr-4 h-fit"
+                />
+              </div>
+            </div>
+            <div className="w-1/3">
+              <Terpopuler />
+              <CatatanDisway />
+            </div>
           </div>
         </div>
       )}
