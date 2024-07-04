@@ -254,7 +254,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="mt-4 text-center">
-            <Link href="#" className="text-blue-600">
+            <Link href="/network" className="text-blue-600">
               Lihat Semua
             </Link>
           </div>

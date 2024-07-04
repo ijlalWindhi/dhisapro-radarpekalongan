@@ -48,10 +48,11 @@ export default function Navbar() {
           <AiOutlineSearch className="md:h-14 h-fit w-20 bg-slate-500 text-white rounded-r-lg p-2 sm:w-8" />
         </Link>
       </div>
-
-      <button className="bg-red-600 rounded-md md:w-40 md:h-14 text-white p-2 sm:h-10 sm:mx-4">
-        Network
-      </button>
+      <Link href={"/network"}>
+        <button className="bg-red-600 rounded-md md:w-40 md:h-14 text-white p-2 sm:h-10 sm:mx-4">
+          Network
+        </button>
+      </Link>
       <div className="sm:w-1/3">
         <span>{formattedDate}</span>
         <ul className="flex">

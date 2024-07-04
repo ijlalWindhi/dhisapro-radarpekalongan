@@ -205,6 +205,7 @@ export default function Body({
             <div className="container md:mx-auto">
               <div className=" flex justify-between">
                 <h2 className="font-semibold">Foto</h2>
+
                 <h2 className="font-semibold">Lihat Semua</h2>
               </div>
               <div className="container mx-auto p-6 bg-black"></div>
