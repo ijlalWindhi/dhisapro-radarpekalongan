@@ -3,7 +3,7 @@ import { Suspense, useEffect, useState } from "react";
 import Body from "./Body";
 import supabase from "../config/supabaseConfig";
 
-const ITEMS_PER_PAGE = 6; // Number of items per page
+const ITEMS_PER_PAGE = 25; // Number of items per page
 
 export default function Home() {
   const [dataBerita, setData] = useState(null);

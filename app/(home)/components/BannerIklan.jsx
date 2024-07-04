@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function BannerIklan({ src }) {
+export default function BannerIklan({ src = "/iklan_banner_satu.webp" }) {
   return (
     <div className="flex justify-center w-full md:p-4">
       <Image

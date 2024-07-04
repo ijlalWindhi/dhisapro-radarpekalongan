@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-export default function VideoSection({ title, src = "" }) {
+export default function VideoSection({ title, src = "/list-video" }) {
   return (
     <div className="container md:mx-auto">
       <div className=" flex justify-between">
         <h2 className="font-semibold">{title}</h2>
-        <Link href={"/network"}>
+        <Link href={src}>
           <h2 className="font-semibold">Lihat Semua</h2>
         </Link>
       </div>
