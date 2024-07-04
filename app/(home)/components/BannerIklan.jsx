@@ -9,7 +9,6 @@ export default function BannerIklan({ src }) {
         height={250}
         quality={10}
         alt="iklan honda"
-        priority={true}
       />
     </div>
   );
