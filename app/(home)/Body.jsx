@@ -36,7 +36,7 @@ export default function Body({
                   <h1 className="text-lg font-bold">{`${
                     title ? title : "Berita Terkini"
                   }`}</h1>
-                  {data?.slice(0, 6).map((data) => (
+                  {data?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={30}
@@ -69,7 +69,7 @@ export default function Body({
                   </div>
                   <div>
                     <div className="h-full ">
-                      {data?.slice(7, 12).map((data) => (
+                      {data?.map((data) => (
                         <div className="flex p-4 sm:py-4" key={data.id}>
                           <Image
                             quality={30}
@@ -117,7 +117,7 @@ export default function Body({
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
                 <div className="h-full ">
-                  {data?.slice(13, 18).map((data) => (
+                  {data?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={30}
@@ -151,7 +151,7 @@ export default function Body({
               <div className="w-full h-full md:w-1/3">
                 <div>
                   <h2 className="text-lg font-bold">Pilihan</h2>
-                  {data?.slice(0, 5).map((data, index) => (
+                  {data?.map((data, index) => (
                     <ul
                       className=" text-black p-4 flex cursor-pointer bg-white"
                       key={data.id}
@@ -170,7 +170,7 @@ export default function Body({
             <div className="container flex justify-center p-5 sm:flex-col">
               <div>
                 <div className="h-full ">
-                  {data?.slice(18, 24).map((data) => (
+                  {data?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={30}
@@ -214,7 +214,7 @@ export default function Body({
             <div className="container flex justify-center p-5 sm:flex-col">
               <div>
                 <div className="h-full ">
-                  {data?.slice(18, 24).map((data) => (
+                  {data?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={30}
