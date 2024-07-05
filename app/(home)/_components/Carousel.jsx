@@ -1,70 +1,55 @@
-import React, { useState } from "react";
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import { RxDotFilled } from "react-icons/rx";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Carousel() {
-  const slides = [
-    {
-      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/5_Bedak_Bikin_Glowing_dengan_SPF_Tinggi_untuk_Perlindungan_Sinar_UV__Harga_Mulai_30_Ribuan_Aja.jpg",
-    },
-    {
-      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/4_Parfum_Lokal_yang_Wanginya_Semerbak_dari_Kejauhan__Bisa_Buat_Orang_Mengenali_Kamu_dari_Jauh.jpg",
-    },
-    {
-      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/5_Bedak_Bikin_Glowing_dengan_SPF_Tinggi_untuk_Perlindungan_Sinar_UV__Harga_Mulai_30_Ribuan_Aja.jpg",
-    },
-
-    {
-      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/5_Bedak_Bikin_Glowing_dengan_SPF_Tinggi_untuk_Perlindungan_Sinar_UV__Harga_Mulai_30_Ribuan_Aja.jpg",
-    },
-    {
-      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/4_Parfum_Lokal_yang_Wanginya_Semerbak_dari_Kejauhan__Bisa_Buat_Orang_Mengenali_Kamu_dari_Jauh.jpg",
-    },
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
-
+export default function Carousel({ items }) {
+  console.log(items);
   return (
-    <div className="max-w-[200] h-[400px] w-full m-auto p-4 relative group">
-      <div
-        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
-      ></div>
-      {/* Left Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactLeft onClick={prevSlide} size={30} />
+    <>
+      <div className="">
+        <div className="px-4 shadow-md rounded-lg overflow-hidden place-content-center object-fill">
+          <Link href={`/post`}>
+            <Image
+              src={items[0].ImageURL}
+              alt="bebas"
+              className="w-full h-48 object-cover"
+              width={500}
+              height={200}
+              quality={5}
+            />
+            <div className="p-2 bg-black">
+              <h3 className="text-sm font-semibold text-white">
+                {items[0].Judul}
+              </h3>
+            </div>
+          </Link>
+        </div>
       </div>
-      {/* Right Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-        <BsChevronCompactRight onClick={nextSlide} size={30} />
+      <div className="container md:mx-auto">
+        <div className="sm:hidden container p-6 bg-black flex sm:flex-col">
+          {items?.slice(0, 5).map((item) => (
+            <div className="" key={item.id}>
+              <div className="px-4 shadow-md rounded-lg overflow-hidden">
+                <Link href={`/post${item.id}`}>
+                  z
+                  <Image
+                    src={item.ImageURL}
+                    alt="bebas"
+                    // className="w-full h-48 object-cover"
+                    width={200}
+                    height={200}
+                    quality={5}
+                  />
+                  <div className="p-2 bg-black">
+                    <h3 className="text-sm font-semibold text-white">
+                      {item.Judul}
+                    </h3>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="flex top-4 justify-center py-2">
-        {slides.map((slide, slideIndex) => (
-          <div
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
-            className="text-2xl cursor-pointer"
-          >
-            <RxDotFilled />
-          </div>
-        ))}
-      </div>
-    </div>
+    </>
   );
 }
