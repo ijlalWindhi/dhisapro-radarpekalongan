@@ -8,14 +8,15 @@ const pageSize = 20; // Number of items per page
 
 export default function PagePekalongan() {
   const [data, setData] = useState(null);
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     getData();
-  }, [page]);
+  }, [currentPage]);
 
   async function getData() {
-    const { data } = await supabase
+    const { data, count } = await supabase
       .from("data-berita")
       .select("*", { count: "exact" })
       .range((currentPage - 1) * pageSize, currentPage * pageSize - 1)
