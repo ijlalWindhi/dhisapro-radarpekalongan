@@ -27,8 +27,14 @@ export default function Body({
         <div>
           <div className="container md:mx-auto">
             {/* banner 1 */}
-            <div className="h-screen bg-gray-100 flex items-center justify-center">
-              <div className="w-full h-16 bg-white border-b"></div>
+            <BannerIklan
+              src={
+                "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/iklan_banner_satu.webp?t=2024-07-05T17%3A28%3A28.473Z"
+              }
+            />
+            {/* banner 2 */}
+            <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
+              <div className="w-full bg-white border-b"></div>
             </div>
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
