@@ -13,7 +13,7 @@ export default function Carousel({ items }) {
                 "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/4_Cara_Hilangkan_Uban_Dalam_1_Malam_Dengan_Bahan_Dapur__Rambut_jadi_Hitam_Permanen_Cuma_Pakai_1_Bahan.jpg"
               }
               alt="bebas"
-              className="w-full object-cover"
+              className="w-full h-48 object-cover"
               width={500}
               height={200}
               quality={5}
