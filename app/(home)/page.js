@@ -24,26 +24,9 @@ export default function Home() {
     setData(data);
   }
 
-  // const handleNext = () => {
-  //   setPage(page + 1);
-  // };
-
-  // const handlePrevious = () => {
-  //   if (page > 1) {
-  //     setPage(page - 1);
-  //   }
-  // };
-
   return (
     <>
-      <Body
-        data={dataBerita}
-        setPage={setPage}
-        page={page}
-        getData={getData}
-        // handleNext={handleNext}
-        // handlePrevious={handlePrevious}
-      />
+      <Body data={dataBerita} setPage={setPage} page={page} getData={getData} />
     </>
   );
 }

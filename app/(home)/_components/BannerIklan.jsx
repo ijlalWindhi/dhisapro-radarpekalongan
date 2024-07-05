@@ -12,7 +12,6 @@ export default function BannerIklan({ src = "/iklan_banner_satu.webp" }) {
         priority
         placeholder="blur"
         blurDataURL="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/iklan_banner_dua.webp?t=2024-07-05T17%3A28%3A51.800Z"
-        loading="lazy"
       />
     </div>
   );
