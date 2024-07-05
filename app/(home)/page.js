@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <Body data={dataBerita} setPage={setPage} page={page} getData={getData} />
+      <Body data={dataBerita} setPage={setPage} page={page} />
     </>
   );
 }
