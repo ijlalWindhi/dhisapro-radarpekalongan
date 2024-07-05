@@ -9,17 +9,17 @@ export default function Carousel({ items }) {
         <div className="px-4 shadow-md rounded-lg overflow-hidden place-content-center object-fill">
           <Link href={`/post`}>
             <Image
-              src={items[0]?.ImageURL}
+              src={
+                "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/4_Cara_Hilangkan_Uban_Dalam_1_Malam_Dengan_Bahan_Dapur__Rambut_jadi_Hitam_Permanen_Cuma_Pakai_1_Bahan.jpg"
+              }
               alt="bebas"
-              className="w-full h-48 object-cover"
+              className="w-full h-full object-cover"
               width={500}
               height={200}
               quality={5}
             />
             <div className="p-2 bg-black">
-              <h3 className="text-sm font-semibold text-white">
-                {items[0]?.Judul}
-              </h3>
+              <h3 className="text-sm font-semibold text-white">Judul</h3>
             </div>
           </Link>
         </div>
