@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Body from "../Body";
 import supabase from "@/app/config/supabaseConfig";
+import BodyCategory from "../_components/BodyCategory";
 
 const pageSize = 20; // Number of items per page
 
@@ -10,6 +11,7 @@ export default function PagePekalongan() {
   const [data, setData] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+
   useEffect(() => {
     getData();
   }, [currentPage]);
@@ -32,14 +34,12 @@ export default function PagePekalongan() {
   };
   return (
     <>
-      <Body
+      <BodyCategory
         title="Jateng"
         data={data}
-        setPage={setPage}
-        page={page}
-        getData={getData}
-        handleNext={handleNext}
-        handlePrevious={handlePrevious}
+        total={totalPages}
+        current={currentPage}
+        onPageChange={handlePageChange}
       />
     </>
   );
