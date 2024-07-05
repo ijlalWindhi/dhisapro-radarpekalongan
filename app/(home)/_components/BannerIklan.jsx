@@ -10,6 +10,8 @@ export default function BannerIklan({ src = "/iklan_banner_satu.webp" }) {
         quality={10}
         alt="iklan honda"
         priority
+        placeholder="blur"
+        blurDataURL="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/iklan_banner_dua.webp?t=2024-07-05T17%3A28%3A51.800Z"
       />
     </div>
   );
