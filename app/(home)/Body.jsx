@@ -116,7 +116,7 @@ export default function Body({
             <VideoSection title={"VIDEO"} />
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
-                <div className="h-full ">
+                {/* <div className="h-full ">
                   {data?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
@@ -145,7 +145,7 @@ export default function Body({
                       </div>
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
 
               <div className="w-full h-full md:w-1/3">
@@ -169,7 +169,7 @@ export default function Body({
             <NetworkSection title={"NETWORK"} />
             <div className="container flex justify-center p-5 sm:flex-col">
               <div>
-                <div className="h-full ">
+                {/* <div className="h-full ">
                   {data?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
@@ -198,7 +198,7 @@ export default function Body({
                       </div>
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
 
               <div className="w-full h-full md:w-1/3"></div>
@@ -213,7 +213,7 @@ export default function Body({
             </div>
             <div className="container flex justify-center p-5 sm:flex-col">
               <div>
-                <div className="h-full ">
+                {/* <div className="h-full ">
                   {data?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
@@ -242,7 +242,7 @@ export default function Body({
                       </div>
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
 
               <div className="w-full h-full md:w-1/3"></div>
