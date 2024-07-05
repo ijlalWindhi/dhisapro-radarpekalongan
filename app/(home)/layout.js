@@ -3,6 +3,7 @@ import "../globals.css";
 import Navbar from "./Navbar";
 import Category from "./Category";
 import Footer from "./Footer";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar />
         <Category />
-        {children}
+        <Suspense>{children}</Suspense>
         <Footer />
       </body>
     </html>
