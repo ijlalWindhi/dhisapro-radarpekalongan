@@ -9,6 +9,7 @@ export default function BannerIklan({ src = "/iklan_banner_satu.webp" }) {
         height={150}
         quality={10}
         alt="iklan honda"
+        priority
       />
     </div>
   );
