@@ -27,9 +27,17 @@ export default function Body({
         <div>
           <div className="container md:mx-auto">
             {/* banner 1 */}
-            <BannerIklan src={"/iklan_banner_satu.webp"} />
+            <BannerIklan
+              src={
+                "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/iklan_banner_satu.webp?t=2024-07-05T17%3A28%3A28.473Z"
+              }
+            />
             {/* banner 2 */}
-            <BannerIklan src={"/iklan_banner_dua.webp"} />
+            <BannerIklan
+              src={
+                "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/iklan_banner_dua.webp?t=2024-07-05T17%3A28%3A51.800Z"
+              }
+            />
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
                 <Carousel />
