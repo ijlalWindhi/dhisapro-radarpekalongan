@@ -9,7 +9,7 @@ export default function Carousel({ items }) {
         <div className="px-4 shadow-md rounded-lg overflow-hidden place-content-center object-fill">
           <Link href={`/post`}>
             <Image
-              src={items[0].ImageURL}
+              src={items[0]?.ImageURL}
               alt="bebas"
               className="w-full h-48 object-cover"
               width={500}
@@ -18,7 +18,7 @@ export default function Carousel({ items }) {
             />
             <div className="p-2 bg-black">
               <h3 className="text-sm font-semibold text-white">
-                {items[0].Judul}
+                {items[0]?.Judul}
               </h3>
             </div>
           </Link>
