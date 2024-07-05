@@ -3,7 +3,8 @@
 import { useState } from "react";
 import SidebarDashboard from "../components/SidebarDashboard";
 import supabase from "@/app/config/supabaseConfig";
-import QuilEditor from "../components/QuilEditor";
+// import QuilEditor from "../components/QuilEditor";
+import dynamic from "next/dynamic";
 
 export default function TulisPage() {
   const [Judul, setJudul] = useState("");
@@ -79,6 +80,11 @@ export default function TulisPage() {
     //  (formData = { ...formData, image_url: publicURL })
   };
 
+  const DynamicComponentWithNoSSR = dynamic(
+    () => import("../components/QuilEditor"),
+    { ssr: false }
+  );
+
   return (
     <>
       <div className="h-screen w-full   flex" style={{ overflow: "auto" }}>
@@ -135,7 +141,7 @@ export default function TulisPage() {
               >
                 Isi Berita
               </label>
-              <QuilEditor
+              <DynamicComponentWithNoSSR
                 value={Isi_Berita}
                 setChangeText={(e) => setIsiBerita(e)}
               />
