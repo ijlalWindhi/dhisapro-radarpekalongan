@@ -23,10 +23,10 @@ export default function Carousel({ items }) {
                 quality={100}
               />
               <div className="p-4 bg-black">
-                <p className="text-blue-300">INFORADAR</p>
-                <h3 className="text-sm font-semibold text-white">
-                  Sindikat Perdagangan Makanan Kadaluarsa di Batang Diungkap
-                </h3>
+                <h1 className="text-sm font-semibold text-white">
+                  4 Skincare yang Bikin Putih Bpom Terbaik, Skincare Murah untuk
+                  Kulit Glowing dan Bebas Masalah Penuaan Dini
+                </h1>
               </div>
             </Link>
           </div>
