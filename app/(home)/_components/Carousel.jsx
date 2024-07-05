@@ -6,20 +6,21 @@ export default function Carousel({ items }) {
   return (
     <>
       <div className="bg-black w-fit">
-        <div className="w-fit px-32 bg-black">
+        <div className=" bg-black">
           <div className=" shadow-md overflow-hidden">
             <Link
               href={
                 "https://inforadar.disway.id/read/670787/8-kebiasaan-kecil-yang-membuat-seseorang-terlihat-sangat-menarik-dimata-orang-lain-cek-apa-saja"
               }
             >
+              <p className="text-white font-bold">HEADLINE</p>
               <Image
-                src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_1.jpeg?t=2024-07-05T12%3A11%3A49.686Z"
+                src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/4_Skincare_yang_Bikin_Putih_Bpom_Terbaik__Skincare_Murah_untuk_Kulit_Glowing_dan_Bebas_Masalah_Penuaan_Dini.jpg"
                 alt="bebas"
-                className="w-full  object-cover"
+                className="object-cover w-full"
                 width={300}
                 height={300}
-                quality={5}
+                quality={100}
               />
               <div className="p-4 bg-black">
                 <p className="text-blue-300">INFORADAR</p>
