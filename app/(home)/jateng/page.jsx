@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Body from "../Body";
 import supabase from "@/app/config/supabaseConfig";
 import BodyCategory from "../_components/BodyCategory";
 
