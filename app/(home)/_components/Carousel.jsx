@@ -1,140 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { RxDotFilled } from "react-icons/rx";
 
 export default function Carousel() {
+  const slides = [
+    {
+      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/5_Bedak_Bikin_Glowing_dengan_SPF_Tinggi_untuk_Perlindungan_Sinar_UV__Harga_Mulai_30_Ribuan_Aja.jpg",
+    },
+    {
+      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/4_Parfum_Lokal_yang_Wanginya_Semerbak_dari_Kejauhan__Bisa_Buat_Orang_Mengenali_Kamu_dari_Jauh.jpg",
+    },
+    {
+      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/5_Bedak_Bikin_Glowing_dengan_SPF_Tinggi_untuk_Perlindungan_Sinar_UV__Harga_Mulai_30_Ribuan_Aja.jpg",
+    },
+
+    {
+      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/5_Bedak_Bikin_Glowing_dengan_SPF_Tinggi_untuk_Perlindungan_Sinar_UV__Harga_Mulai_30_Ribuan_Aja.jpg",
+    },
+    {
+      url: "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/4_Parfum_Lokal_yang_Wanginya_Semerbak_dari_Kejauhan__Bisa_Buat_Orang_Mengenali_Kamu_dari_Jauh.jpg",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
   return (
-    <div
-      id="default-carousel"
-      className="relative w-full"
-      data-carousel="slide"
-    >
-      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
-            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt="..."
-          />
-        </div>
-
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
-            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt="..."
-          />
-        </div>
-
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
-            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt="..."
-          />
-        </div>
-
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
-            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt="..."
-          />
-        </div>
-
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
-            className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt="..."
-          />
-        </div>
+    <div className="max-w-[200] h-[400px] w-full m-auto p-4 relative group">
+      <div
+        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+        className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+      ></div>
+      {/* Left Arrow */}
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <BsChevronCompactLeft onClick={prevSlide} size={30} />
       </div>
-
-      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="true"
-          aria-label="Slide 1"
-          data-carousel-slide-to="0"
-        ></button>
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 2"
-          data-carousel-slide-to="1"
-        ></button>
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 3"
-          data-carousel-slide-to="2"
-        ></button>
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 4"
-          data-carousel-slide-to="3"
-        ></button>
-        <button
-          type="button"
-          className="w-3 h-3 rounded-full"
-          aria-current="false"
-          aria-label="Slide 5"
-          data-carousel-slide-to="4"
-        ></button>
+      {/* Right Arrow */}
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
-
-      <button
-        type="button"
-        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-prev
-      >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
+      <div className="flex top-4 justify-center py-2">
+        {slides.map((slide, slideIndex) => (
+          <div
+            key={slideIndex}
+            onClick={() => goToSlide(slideIndex)}
+            className="text-2xl cursor-pointer"
           >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M5 1 1 5l4 4"
-            />
-          </svg>
-          <span className="sr-only">Previous</span>
-        </span>
-      </button>
-      <button
-        type="button"
-        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-next
-      >
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg
-            className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m1 9 4-4-4-4"
-            />
-          </svg>
-          <span className="sr-only">Next</span>
-        </span>
-      </button>
+            <RxDotFilled />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

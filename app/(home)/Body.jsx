@@ -36,7 +36,7 @@ export default function Body({
             </div>
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
-                <Carousel />
+                <Carousel items={data} />
                 <div className="h-full ">
                   <h1 className="text-lg font-bold">{`${
                     title ? title : "Berita Terkini"
