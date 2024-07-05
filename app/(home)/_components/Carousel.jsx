@@ -1,29 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import BannerIklan from "./BannerIklan";
 
 export default function Carousel({ items }) {
   console.log(items);
   return (
     <>
       <div className="">
-        <div className="px-4 shadow-md rounded-lg overflow-hidden place-content-center object-fill">
-          <Link href={`/post`}>
-            <Image
-              src={
-                "https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/4_Cara_Hilangkan_Uban_Dalam_1_Malam_Dengan_Bahan_Dapur__Rambut_jadi_Hitam_Permanen_Cuma_Pakai_1_Bahan.jpg"
-              }
-              alt="bebas"
-              className="w-full"
-              width={500}
-              height={200}
-              quality={5}
-              priority
-            />
-            <div className="p-2 bg-black">
-              <h3 className="text-sm font-semibold text-white">Judul</h3>
-            </div>
-          </Link>
-        </div>
+        <BannerIklan src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/4_Cara_Hilangkan_Uban_Dalam_1_Malam_Dengan_Bahan_Dapur__Rambut_jadi_Hitam_Permanen_Cuma_Pakai_1_Bahan.jpg" />
       </div>
       <div className="container md:mx-auto">
         <div className="sm:hidden container p-6 bg-black flex sm:flex-col">
