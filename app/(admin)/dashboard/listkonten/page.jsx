@@ -1,11 +1,11 @@
 "use client";
 
 import supabase from "@/app/config/supabaseConfig";
-import SidebarDashboard from "../components/SidebarDashboard";
+import SidebarDashboard from "../_components/SidebarDashboard";
 import { useEffect, useState } from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import Link from "next/link";
-import Pagination from "@/app/(home)/components/Pagination";
+import Pagination from "@/app/(home)/_components/Pagination";
 
 const ITEMS_PER_PAGE = 6; // Number of items per page
 

@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import ContentLoader from "./components/ContentLoader";
+import ContentLoader from "./_components/ContentLoader";
 // import Pagination from "./components/Pagination";
-import Carousel from "./components/Carousel";
-import BannerIklan from "./components/BannerIklan";
-import CatatanDisway from "./components/CatatanDisway";
-import Terpopuler from "./components/Terpopuler";
-import VideoSection from "./components/VideoSection";
+import Carousel from "./_components/Carousel";
+import BannerIklan from "./_components/BannerIklan";
+import CatatanDisway from "./_components/CatatanDisway";
+import Terpopuler from "./_components/Terpopuler";
+import VideoSection from "./_components/VideoSection";
+import NetworkSection from "./_components/NetworkSection";
 
 export default function Body({
   title,
@@ -30,7 +31,7 @@ export default function Body({
             <BannerIklan src={"/iklan_banner_dua.webp"} />
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
-                <Carousel />
+                {/* <Carousel /> */}
                 <div className="h-full ">
                   <h1 className="text-lg font-bold">{`${
                     title ? title : "Berita Terkini"
@@ -165,11 +166,11 @@ export default function Body({
               </div>
             </div>
             {/* VIDEO */}
-            <VideoSection title={"NETWORK"} src="/network" />
+            <NetworkSection title={"NETWORK"} />
             <div className="container flex justify-center p-5 sm:flex-col">
               <div>
                 <div className="h-full ">
-                  {data.map((data) => (
+                  {data?.slice(18, 24).map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={30}

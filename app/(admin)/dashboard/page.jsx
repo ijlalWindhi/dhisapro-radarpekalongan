@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import SidebarDashboard from "./components/SidebarDashboard";
+import SidebarDashboard from "./_components/SidebarDashboard";
 import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {

@@ -1,10 +1,10 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import SidebarDashboard from "../../components/SidebarDashboard";
+import SidebarDashboard from "../../_components/SidebarDashboard";
 import { useEffect, useState } from "react";
 import supabase from "@/app/config/supabaseConfig";
-import QuilEditor from "../../components/QuilEditor";
+import QuilEditor from "../../_components/QuilEditor";
 
 export default function EditPage() {
   const [Judul, setJudul] = useState("");

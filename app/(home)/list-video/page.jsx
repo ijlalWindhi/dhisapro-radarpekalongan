@@ -1,6 +1,6 @@
-import BannerIklan from "../components/BannerIklan";
-import CatatanDisway from "../components/CatatanDisway";
-import Terpopuler from "../components/Terpopuler";
+import BannerIklan from "../_components/BannerIklan";
+import CatatanDisway from "../_components/CatatanDisway";
+import Terpopuler from "../_components/Terpopuler";
 
 export default function page() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import SidebarDashboard from "../components/SidebarDashboard";
+import SidebarDashboard from "../_components/SidebarDashboard";
 import supabase from "@/app/config/supabaseConfig";
 // import QuilEditor from "../components/QuilEditor";
 import dynamic from "next/dynamic";
@@ -81,7 +81,7 @@ export default function TulisPage() {
   };
 
   const DynamicComponentWithNoSSR = dynamic(
-    () => import("../components/QuilEditor"),
+    () => import("../_components/QuilEditor"),
     { ssr: false }
   );
 

@@ -1,5 +1,5 @@
 import "../globals.css";
-import HeaderDashboard from "./dashboard/components/HeaderDashboard";
+import HeaderDashboard from "./dashboard/_components/HeaderDashboard";
 
 export default function AdminLayout({ children }) {
   return (

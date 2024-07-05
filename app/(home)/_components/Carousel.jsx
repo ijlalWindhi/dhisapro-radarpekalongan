@@ -10,7 +10,7 @@ export default function Carousel() {
       <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="/iklan_banner_satu.jpg"
+            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -18,7 +18,7 @@ export default function Carousel() {
 
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="/iklan_banner_dua.png"
+            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -26,7 +26,7 @@ export default function Carousel() {
 
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="/docs/images/carousel/carousel-3.svg"
+            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -34,7 +34,7 @@ export default function Carousel() {
 
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="/docs/images/carousel/carousel-4.svg"
+            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
@@ -42,7 +42,7 @@ export default function Carousel() {
 
         <div className="hidden duration-700 ease-in-out" data-carousel-item>
           <img
-            src="/docs/images/carousel/carousel-5.svg"
+            src="https://zdgnipjmpjiqktbpdvjj.supabase.co/storage/v1/object/public/news-image/network_4.jpeg?t=2024-07-05T12%3A12%3A22.124Z"
             className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             alt="..."
           />
