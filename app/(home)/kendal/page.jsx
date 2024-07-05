@@ -4,46 +4,44 @@ import { useEffect, useState } from "react";
 import Body from "../Body";
 import supabase from "@/app/config/supabaseConfig";
 
-const ITEMS_PER_PAGE = 6; // Number of items per page
+const pageSize = 20; // Number of items per page
 
 export default function PageKendal() {
   const [data, setData] = useState(null);
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     getData();
-  }, [page]);
+  }, [currentPage]);
 
   async function getData() {
-    const from = (page - 1) * ITEMS_PER_PAGE;
-    const to = page * ITEMS_PER_PAGE - 1;
-    const { data } = await supabase
+    const { data, count } = await supabase
       .from("data-berita")
-      .select()
-      .range(from, to)
+      .select("*", { count: "exact" })
+      .range((currentPage - 1) * pageSize, currentPage * pageSize - 1)
       .eq("Kategori", "Kendal")
       .order("id", { ascending: false });
-    setData(data);
+    setData(data || []);
+    setTotalPages(Math.ceil(count / pageSize));
   }
   const handleNext = () => {
     setPage(page + 1);
   };
 
-  const handlePrevious = () => {
-    if (page > 1) {
-      setPage(page - 1);
-    }
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages) return;
+    console.log("test");
+    setCurrentPage(page);
   };
   return (
     <>
       <Body
         title="Kendal"
         data={data}
-        setPage={setPage}
-        page={page}
-        getData={getData}
-        handleNext={handleNext}
-        handlePrevious={handlePrevious}
+        total={totalPages}
+        current={currentPage}
+        onPageChange={handlePageChange}
       />
     </>
   );

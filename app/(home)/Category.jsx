@@ -39,7 +39,7 @@ export default function Category() {
         <Link href="/Lain-lain">
           <li className="px-2">Lain-Lain</li>
         </Link>
-        <Link href="/">
+        <Link href="/indeks">
           <li className="px-2">Indeks</li>
         </Link>
       </ul>

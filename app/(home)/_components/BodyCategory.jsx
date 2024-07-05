@@ -2,19 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import ContentLoader from "./_components/ContentLoader";
-// import Pagination from "./components/Pagination";
-import Carousel from "./_components/Carousel";
-import BannerIklan from "./_components/BannerIklan";
-import CatatanDisway from "./_components/CatatanDisway";
-import Terpopuler from "./_components/Terpopuler";
-import VideoSection from "./_components/VideoSection";
-import NetworkSection from "./_components/NetworkSection";
-import Terkini from "./_components/Terkini";
+import Carousel from "./Carousel";
+import CatatanDisway from "./CatatanDisway";
+import Terpopuler from "./Terpopuler";
+import Terkini from "./Terkini";
+import Pagination from "./Pagination";
+import ContentLoader from "./ContentLoader";
+import BannerIklan from "./BannerIklan";
 
-export default function Body({
+export default function BodyCategory({
   title,
   data,
+  total,
+  current,
+  onPageChange,
   // setPage,
   // page,
   // getData,
@@ -37,7 +38,7 @@ export default function Body({
                   <h1 className="text-lg font-bold">{`${
                     title ? title : "Berita Terkini"
                   }`}</h1>
-                  {data?.slice(0, 6).map((data) => (
+                  {data?.slice(0, 5).map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={30}
@@ -70,7 +71,7 @@ export default function Body({
                   </div>
                   <div>
                     <div className="h-full ">
-                      {data?.slice(7, 12).map((data) => (
+                      {data?.slice(6, 10).map((data) => (
                         <div className="flex p-4 sm:py-4" key={data.id}>
                           <Image
                             quality={30}
@@ -115,11 +116,46 @@ export default function Body({
                 <Terkini data={data} />
               </div>
             </div>
-            <VideoSection title={"VIDEO"} />
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
                 <div className="h-full ">
-                  {data?.slice(13, 18).map((data) => (
+                  {data?.slice(11, 15).map((data) => (
+                    <div className="flex p-4 sm:py-4" key={data.id}>
+                      <Image
+                        quality={30}
+                        width={150}
+                        height={150}
+                        src={data.ImageURL ? data.ImageURL : ""}
+                        alt=""
+                        className="min-w-40 sm:min-w-28 pr-4 "
+                      />
+                      <div className="flex-col min-w-40 sm:min-w-28 h-fit">
+                        <Link
+                          href={`/post/${data.id}`}
+                          className="font-semibold "
+                        >
+                          {data.Judul}
+                        </Link>
+                        <span className="flex items-center">
+                          <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
+                            {data.Kategori}
+                          </p>
+                          <p className="font-bold text-sm">
+                            {data.created_at.substring(0, 10)}
+                          </p>
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="w-full h-full md:w-1/3"></div>
+            </div>
+            <div className="flex justify-center p-5 sm:flex-col">
+              <div>
+                <div className="h-full ">
+                  {data?.slice(16, 20).map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={30}
@@ -167,97 +203,12 @@ export default function Body({
                 </div>
               </div>
             </div>
-            {/* VIDEO */}
-            <NetworkSection title={"NETWORK"} />
-            <div className="container flex justify-center p-5 sm:flex-col">
-              <div>
-                <div className="h-full ">
-                  {data?.slice(18, 24).map((data) => (
-                    <div className="flex p-4 sm:py-4" key={data.id}>
-                      <Image
-                        quality={30}
-                        width={150}
-                        height={150}
-                        src={data.ImageURL ? data.ImageURL : ""}
-                        alt=""
-                        className="min-w-40 sm:min-w-28 pr-4 "
-                      />
-                      <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                        <Link
-                          href={`/post/${data.id}`}
-                          className="font-semibold "
-                        >
-                          {data.Judul}
-                        </Link>
-                        <span className="flex items-center">
-                          <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
-                            {data.Kategori}
-                          </p>
-                          <p className="font-bold text-sm">
-                            {data.created_at.substring(0, 10)}
-                          </p>
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-              <div className="w-full h-full md:w-1/3"></div>
-            </div>
-            <div className="container md:mx-auto">
-              <div className=" flex justify-between">
-                <h2 className="font-semibold">Foto</h2>
-                <h2 className="font-semibold">Lihat Semua</h2>
-              </div>
-              <div className="container mx-auto p-6 bg-black"></div>
-            </div>
-            <div className="container flex justify-center p-5 sm:flex-col">
-              <div>
-                <div className="h-full ">
-                  {data?.slice(18, 24).map((data) => (
-                    <div className="flex p-4 sm:py-4" key={data.id}>
-                      <Image
-                        quality={30}
-                        width={150}
-                        height={150}
-                        src={data.ImageURL ? data.ImageURL : ""}
-                        alt=""
-                        className="min-w-40 sm:min-w-28 pr-4 "
-                      />
-                      <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                        <Link
-                          href={`/post/${data.id}`}
-                          className="font-semibold "
-                        >
-                          {data.Judul}
-                        </Link>
-                        <span className="flex items-center">
-                          <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
-                            {data.Kategori}
-                          </p>
-                          <p className="font-bold text-sm">
-                            {data.created_at.substring(0, 10)}
-                          </p>
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="w-full h-full md:w-1/3"></div>
-            </div>
-
-            {/* <Pagination
-              setPage={setPage}
-              page={page}
-              getData={getData}
-              handleNext={handleNext}
-              handlePrevious={handlePrevious}
-
-              // lenght={currentPost?.lenght}
-            /> */}
+            <Pagination
+              total={total}
+              current={current}
+              onPageChange={onPageChange}
+            />
           </div>
         </div>
       ) : (

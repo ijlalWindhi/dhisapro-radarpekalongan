@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Body from "../Body";
 import supabase from "@/app/config/supabaseConfig";
+import BodyCategory from "../_components/BodyCategory";
 
-const ITEMS_PER_PAGE = 6; // Number of items per page
+const pageSize = 20; // Number of items per page
 
 export default function PagePekalongan() {
   const [data, setData] = useState(null);
@@ -15,36 +15,29 @@ export default function PagePekalongan() {
   }, [page]);
 
   async function getData() {
-    const from = (page - 1) * ITEMS_PER_PAGE;
-    const to = page * ITEMS_PER_PAGE - 1;
     const { data } = await supabase
       .from("data-berita")
-      .select()
-      .range(from, to)
+      .select("*", { count: "exact" })
+      .range((currentPage - 1) * pageSize, currentPage * pageSize - 1)
       .eq("Kategori", "Lain-lain")
       .order("id", { ascending: false });
-    setData(data);
+    setData(data || []);
+    setTotalPages(Math.ceil(count / pageSize));
   }
 
-  const handleNext = () => {
-    setPage(page + 1);
-  };
-
-  const handlePrevious = () => {
-    if (page > 1) {
-      setPage(page - 1);
-    }
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages) return;
+    console.log("test");
+    setCurrentPage(page);
   };
   return (
     <>
-      <Body
+      <BodyCategory
         title="Lain-lain"
         data={data}
-        setPage={setPage}
-        page={page}
-        getData={getData}
-        handleNext={handleNext}
-        handlePrevious={handlePrevious}
+        total={totalPages}
+        current={currentPage}
+        onPageChange={handlePageChange}
       />
     </>
   );

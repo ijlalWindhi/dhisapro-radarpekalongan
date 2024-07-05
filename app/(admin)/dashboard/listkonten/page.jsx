@@ -7,11 +7,11 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import Link from "next/link";
 import Pagination from "@/app/(home)/_components/Pagination";
 
-const ITEMS_PER_PAGE = 6; // Number of items per page
+// const ITEMS_PER_PAGE = 6; // Number of items per page
 
 export default function ListKonten() {
   const [news, setNews] = useState([]);
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
