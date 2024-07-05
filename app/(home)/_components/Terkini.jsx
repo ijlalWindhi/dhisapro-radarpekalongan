@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export default function Terkini({ data }) {
+export default function Terkini({ data, title = "TERKINI" }) {
   return (
     <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">TERKINI</h1>
+      <h1 className="text-xl font-bold mb-4">{title}</h1>
       {data?.slice(0, 5).map((data) => (
         <div className="flex mb-4" key={data.id}>
           <Image

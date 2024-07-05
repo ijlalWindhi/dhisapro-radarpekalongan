@@ -21,6 +21,7 @@ export default function Carousel({ items }) {
                 width={300}
                 height={300}
                 quality={100}
+                priority
               />
               <div className="p-4 bg-black">
                 <h1 className="text-sm font-semibold text-white">

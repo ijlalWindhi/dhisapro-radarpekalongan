@@ -28,9 +28,13 @@ export default function BodyCategory({
         <div>
           <div className="container md:mx-auto">
             {/* banner 1 */}
-            <BannerIklan src={"/iklan_banner_satu.webp"} />
+            <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
+              <div className="w-full bg-white border-b"></div>
+            </div>
             {/* banner 2 */}
-            <BannerIklan src={"/iklan_banner_dua.webp"} />
+            <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
+              <div className="w-full bg-white border-b"></div>
+            </div>
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
                 <Carousel />
