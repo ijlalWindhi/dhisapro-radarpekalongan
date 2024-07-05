@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import SidebarDashboard from "../../components/SidebarDashboard";
 import { useEffect, useState } from "react";
 import supabase from "@/app/config/supabaseConfig";
+import QuilEditor from "../../components/QuilEditor";
 
 export default function EditPage() {
   const [Judul, setJudul] = useState("");
@@ -11,6 +12,9 @@ export default function EditPage() {
   const [Isi_Berita, setIsiBerita] = useState("");
   const [ImageURL, setImageUrl] = useState("");
   const [formError, setFormError] = useState(null);
+  const [tags, setTags] = useState("");
+  const [deskripsi, setDeskripsi] = useState("");
+  const [author, setAuthor] = useState("");
 
   const { id } = useParams();
 
@@ -33,6 +37,9 @@ export default function EditPage() {
         setIsiBerita(data.Isi_Berita);
         setImageUrl(data.ImageURL);
         setKategori(data.Kategori);
+        setTags(data.tags);
+        setDeskripsi(data.deskripsi);
+        setAuthor(data.author);
       }
     };
 
@@ -49,7 +56,15 @@ export default function EditPage() {
 
     const { data, error } = await supabase
       .from("data-berita")
-      .update({ Isi_Berita, Judul, ImageURL, Kategori })
+      .update({
+        Isi_Berita,
+        Judul,
+        ImageURL,
+        Kategori,
+        tags,
+        deskripsi,
+        author,
+      })
       .eq("id", id)
       .select();
 
@@ -130,9 +145,17 @@ export default function EditPage() {
                   Pilih kategori...
                 </option>
                 <option value="Pekalongan">Pekalongan</option>
-                <option value="Batang">Batang</option>
+                <option value="Kecantikan">Kecantikan</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Otomotif">Otomotif</option>
                 <option value="Kajen">Kajen</option>
+                <option value="Batang">Batang</option>
                 <option value="Kendal">Kendal</option>
+                <option value="Bisnis">Bisnis</option>
+                <option value="Pendidikan">Pendidikan</option>
+                <option value="Nasional">Nasional</option>
+                <option value="Nasional">Jateng</option>
+                <option value="Lain-Lain">Lain-lain</option>
               </select>
             </div>
             <div className="my-4">
@@ -142,7 +165,11 @@ export default function EditPage() {
               >
                 Isi Berita
               </label>
-              <textarea
+              <QuilEditor
+                value={Isi_Berita}
+                setChangeText={(e) => setIsiBerita(e)}
+              />
+              {/* <textarea
                 id="isi_berita"
                 rows="4"
                 className="block p-2.5 w-full h-96 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -150,6 +177,8 @@ export default function EditPage() {
                 value={Isi_Berita}
                 onChange={(e) => setIsiBerita(e.target.value)}
               />
+
+               */}
             </div>
             <div className="my-4">
               <label
@@ -167,6 +196,56 @@ export default function EditPage() {
                 onChange={(e) => handleFilesUpload(e)}
               />
             </div>
+
+            <div className="my-4">
+              <label
+                htmlFor="tags"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Tags
+              </label>
+              <input
+                type="text"
+                id="tags"
+                placeholder="Pisahkan dengan koma Ex: Hiburan, Olahraga"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                value={tags}
+                onChange={(e) => setTags(e.target.value)}
+              />
+            </div>
+
+            <div className="my-4">
+              <label
+                htmlFor="deskripsi"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Deskripsi
+              </label>
+              <textarea
+                type="text"
+                id="deskripsi"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                value={deskripsi}
+                onChange={(e) => setDeskripsi(e.target.value)}
+              ></textarea>
+            </div>
+
+            <div className="my-4">
+              <label
+                htmlFor="author"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Author
+              </label>
+              <input
+                type="text"
+                id="author"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+              />
+            </div>
+
             <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
               Update Data Berita
             </button>

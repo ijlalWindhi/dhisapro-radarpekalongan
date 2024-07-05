@@ -11,22 +11,42 @@ const ITEMS_PER_PAGE = 6; // Number of items per page
 
 export default function ListKonten() {
   const [news, setNews] = useState([]);
-  const [page, setPage] = useState(1);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const pageSize = 10; // Number of items per page
+
+  const fetchData = async (kategori = "") => {
+    setLoading(true);
+    if (kategori == "") {
+      const { data, count } = await supabase
+        .from("data-berita")
+        .select("*", { count: "exact" })
+        .range((currentPage - 1) * pageSize, currentPage * pageSize - 1)
+        .order("id", { ascending: false });
+      setNews(data || []);
+      setTotalPages(Math.ceil(count / pageSize));
+    } else {
+      const { data, count } = await supabase
+        .from("data-berita")
+        .select("*", { count: "exact" })
+        .eq("Kategori", kategori)
+        .range((currentPage - 1) * pageSize, currentPage * pageSize - 1);
+      setNews(data || []);
+      setTotalPages(Math.ceil(count / pageSize));
+    }
+    setLoading(false);
+  };
 
   useEffect(() => {
-    getData();
-  }, [page]);
+    fetchData();
+  }, [currentPage]);
 
-  async function getData() {
-    const from = (page - 1) * ITEMS_PER_PAGE;
-    const to = page * ITEMS_PER_PAGE - 1;
-    const { data } = await supabase
-      .from("data-berita")
-      .select()
-      .range(from, to)
-      .order("id", { ascending: false });
-    setNews(data);
-  }
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+  };
 
   const handleDelete = async (id) => {
     if (confirm("Are you sure you want to delete?")) {
@@ -52,20 +72,44 @@ export default function ListKonten() {
     }
   };
 
-  const handleNext = () => {
-    setPage(page + 1);
-  };
+  // const handleNext = (pageNum) => {
+  //   if (pageNum <= totalPages) {
+  //     setPage(pageNum);
+  //   }
+  // };
 
-  const handlePrevious = () => {
-    if (page > 1) {
-      setPage(page - 1);
-    }
-  };
+  // const handlePrevious = () => {
+  //   if (page > 1) {
+  //     setPage(page - 1);
+  //   }
+  // };
   return (
     <>
       <div className="h-screen w-full bg-slate-100 flex">
         <SidebarDashboard />
         <div className="w-5/6 h-fit p-10">
+          <div className="w-1/4 mb-5">
+            <label>Kategori</label>
+            <select
+              id="kategori"
+              className="bg-gray-50 mt-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              onChange={(e) => fetchData(e.target.value)}
+            >
+              <option value="">Semua</option>
+              <option value="Pekalongan">Pekalongan</option>
+              <option value="Kecantikan">Kecantikan</option>
+              <option value="Lifestyle">Lifestyle</option>
+              <option value="Otomotif">Otomotif</option>
+              <option value="Kajen">Kajen</option>
+              <option value="Batang">Batang</option>
+              <option value="Kendal">Kendal</option>
+              <option value="Bisnis">Bisnis</option>
+              <option value="Pendidikan">Pendidikan</option>
+              <option value="Nasional">Nasional</option>
+              <option value="Nasional">Jateng</option>
+              <option value="Lain-Lain">Lain-lain</option>
+            </select>
+          </div>
           <div className="relative overflow-x-auto">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -75,6 +119,9 @@ export default function ListKonten() {
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Judul Berita
+                  </th>
+                  <th scope="col" className="px-6 py-3">
+                    Kategori
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Edit
@@ -97,6 +144,7 @@ export default function ListKonten() {
                       {index + 1}
                     </th>
                     <td className="px-6 py-4 text-lg ">{data.Judul}</td>
+                    <td className="px-6 py-4 text-lg ">{data.Kategori}</td>
                     <Link href={`/dashboard/edit/${data.id}`}>
                       <td className="px-6 py-4">
                         <AiFillEdit className="h-8 w-8 text-blue-500" />
@@ -113,7 +161,11 @@ export default function ListKonten() {
               </tbody>
             </table>
           </div>
-          <Pagination handleNext={handleNext} handlePrevious={handlePrevious} />
+          <Pagination
+            total={totalPages}
+            current={currentPage}
+            onPageChange={handlePageChange}
+          />
         </div>
       </div>
     </>

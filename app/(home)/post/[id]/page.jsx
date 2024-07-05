@@ -44,33 +44,46 @@ export default function PagePost() {
       {dataBerita && (
         <div className="container md:mx-auto">
           <div className="flex p-5 sm:flex-col">
-            <div className="flex flex-col w-2/3 md:items-center ">
-              <h1 className=" font-bold text-2xl sm:text-xl text-center">
+            <div className="flex flex-col md:items-center ">
+              <h1 className="mt-10 mb-5 font-bold text-3xl sm:text-xl text-center">
                 {dataBerita.Judul}
               </h1>
+              <center>Penulis: {dataBerita.author}</center>
+              <div className="mt-5"></div>
               <Image
                 quality={50}
                 width={500}
                 height={500}
                 src={dataBerita.ImageURL}
                 alt=""
-                className="h-fit rounded-lg mb-10"
+                className="md:w-1/3 h-fit rounded-lg mb-10"
               />
-              <div className="text-lg">
-                {" "}
-                {sentences?.map((sentence, index) => (
-                  <p key={index} className="">
-                    {sentence}.
-                  </p>
-                ))}
-                <Image
-                  quality={30}
-                  width={150}
-                  height={150}
-                  src={dataBerita.ImageURL_2 ? dataBerita.ImageURL_2 : ""}
-                  alt=""
-                  className="w-40 sm:w-28 pr-4 h-fit"
-                />
+              <div className="md:mx-auto md:w-1/2 sm:px-6 text-lg">
+                {/* {" "}
+            {sentences?.map((sentence, index) => (
+              <p key={index} className="my-6">
+                {sentence.trim()}.
+              </p>
+            ))} */}
+                {dataBerita.tags?.split(",").length > 0 &&
+                  dataBerita.tags.split(",").map((val, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        background: "blue",
+                        color: "white",
+                        padding: "1px 10px",
+                        borderRadius: "2px",
+                        marginRight: "2px",
+                      }}
+                    >
+                      <small style={{ fontStyle: "italic" }}>#{val}</small>
+                    </span>
+                  ))}
+                <div
+                  style={{ marginTop: "10px" }}
+                  dangerouslySetInnerHTML={{ __html: paragraf }}
+                ></div>
               </div>
             </div>
             <div className="w-1/3">
