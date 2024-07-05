@@ -26,9 +26,9 @@ export default function Body({
         <div>
           <div className="container md:mx-auto">
             {/* banner 1 */}
-            <BannerIklan src={"/iklan_banner_satu.webp"} />
+            {/* <BannerIklan src={"/iklan_banner_satu.webp"} /> */}
             {/* banner 2 */}
-            <BannerIklan src={"/iklan_banner_dua.webp"} />
+            {/* <BannerIklan src={"/iklan_banner_dua.webp"} /> */}
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
                 {/* <Carousel /> */}
