@@ -89,7 +89,7 @@ export default function TulisPage() {
 
   return (
     <>
-      <div className="h-screen w-full   flex" style={{ overflow: "auto" }}>
+      <div className="h-screen w-full overflow-auto flex">
         <SidebarDashboard />
         <div className="w-5/6 h-screen p-10">
           <form onSubmit={handleSubmit} className="h-full">
