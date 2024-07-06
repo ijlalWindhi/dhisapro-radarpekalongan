@@ -84,7 +84,7 @@ export default function TulisPage() {
 
   const DynamicComponentWithNoSSR = dynamic(
     () => import("../_components/QuilEditor"),
-    { ssr: true }
+    { ssr: false }
   );
 
   return (
@@ -143,7 +143,7 @@ export default function TulisPage() {
               >
                 Isi Berita
               </label>
-              <QuilEditor
+              <DynamicComponentWithNoSSR
                 value={Isi_Berita}
                 setChangeText={(e) => setIsiBerita(e)}
               />
