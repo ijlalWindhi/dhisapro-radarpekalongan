@@ -11,6 +11,9 @@ import Terpopuler from "./_components/Terpopuler";
 import VideoSection from "./_components/VideoSection";
 import NetworkSection from "./_components/NetworkSection";
 import Terkini from "./_components/Terkini";
+import Carousel2 from "./_components/Carousel2";
+import Carousel3 from "./_components/Carousel3";
+import Carousel4 from "./_components/Carousel4";
 
 export default function Body({
   title,
@@ -36,7 +39,9 @@ export default function Body({
             </div>
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
-                <Carousel items={data} />
+                {/* <Carousel items={data} /> */}
+                {/* <Carousel3 /> */}
+                <Carousel4 />
                 <div className="h-full ">
                   <h1 className="text-lg font-bold">{`${
                     title ? title : "Berita Terkini"
