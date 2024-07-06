@@ -47,7 +47,9 @@ export default function TulisPage() {
     if (data) {
       console.log(data);
       alert("Success adding data");
-      // window.location.replace("/dashboard/listkonten");
+      if (typeof window !== "undefined") {
+        window.location.replace("/dashboard/listkonten");
+      }
     }
   };
 
