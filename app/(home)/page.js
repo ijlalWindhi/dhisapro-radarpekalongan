@@ -11,7 +11,7 @@ export default async function Home() {
     .select()
     .range(0, 24)
     .order("id", { ascending: false });
-  console.log(data);
+
   // const [dataBerita, setData] = useState(null);
   // const [page, setPage] = useState(1);
 
