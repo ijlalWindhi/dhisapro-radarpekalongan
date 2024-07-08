@@ -44,7 +44,7 @@ export default function Body({
               </div>
             </div> */}
             <div
-              className="w-full flex justify-center h-60"
+              className="w-full flex justify-center h-32 md:h-60"
             >
               <div className="w-full my-auto m-10">
                 <Image
@@ -53,7 +53,7 @@ export default function Body({
                   width={500}
                   height={500}
                   priority
-                  className="mx-auto object-cover object-center h-60 w-full"
+                  className="mx-auto object-cover object-center h-32 md:h-60 w-full"
                 />
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function Body({
               <div className="w-full bg-white border-b"></div>
             </div> */}
             <div
-              className="w-full flex justify-center mt-5 h-60"
+              className="w-full flex justify-center mt-5 h-32 md:h-60"
             >
               <div className="w-full my-auto m-10">
                 <Image
@@ -71,7 +71,7 @@ export default function Body({
                   width={500}
                   height={500}
                   priority
-                  className="mx-auto object-cover object-center h-60 w-full"
+                  className="mx-auto object-cover object-center h-32 md:h-60 w-full"
                 />
               </div>
             </div>
