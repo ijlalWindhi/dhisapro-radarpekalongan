@@ -11,8 +11,8 @@ export default function Terpopuler({ data }) {
         >
           <li className="flex items-center justify-start gap-1">
             {index + 1}
-            <Link aria-label="link to different page" href={`/post/${data.id}`}>
-              <li className="mx-2">{data.Judul}</li>
+            <Link aria-label="link to different page" className="mx-2" href={`/post/${data.id}`}>
+              {data.Judul}
             </Link>
           </li>
         </ul>
