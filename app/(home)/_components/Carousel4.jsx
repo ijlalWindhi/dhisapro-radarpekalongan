@@ -31,7 +31,7 @@ export default function Carousel4() {
         }}
       >
         {slides.map((s) => {
-          return <img src={s} />;
+          return <img key={s} src={s} alt="caraousel" />;
         })}
         <div className="absolute">
           <p>bebas</p>
@@ -39,10 +39,10 @@ export default function Carousel4() {
       </div>
 
       <div className="absolute top-0 h-full w-full justify-between items-center flex text-white px-10 text-3xl">
-        <button onClick={previousSlide}>
+        <button aria-label="button prev" onClick={previousSlide}>
           <BsFillArrowLeftCircleFill />
         </button>
-        <button onClick={nextSlide}>
+        <button aria-label="button next" onClick={nextSlide}>
           <BsFillArrowRightCircleFill />
         </button>
       </div>
@@ -58,6 +58,7 @@ export default function Carousel4() {
               className={`rounded-full w-5 h-5 cursor-pointer  ${
                 i == current ? "bg-white" : "bg-gray-500"
               }`}
+              aria-label="circle"
             ></div>
           );
         })}

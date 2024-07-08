@@ -121,7 +121,7 @@ export default function PagePost() {
                   className="min-w-40 sm:min-w-28 pr-4 "
                 />
                 <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                  <Link href={`/post/${data.id}`} className="font-semibold ">
+                  <Link aria-label="link to different page" href={`/post/${data.id}`} className="font-semibold ">
                     {data.Judul}
                   </Link>
                   <span className="flex items-center">

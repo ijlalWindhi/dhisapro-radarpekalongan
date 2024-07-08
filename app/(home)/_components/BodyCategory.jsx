@@ -54,6 +54,7 @@ export default function BodyCategory({
                       />
                       <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                         <Link
+                        aria-label="link to different page"
                           href={`/post/${data.id}`}
                           className="font-semibold "
                         >
@@ -87,6 +88,7 @@ export default function BodyCategory({
                           />
                           <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                             <Link
+                            aria-label="link to different page"
                               href={`/post/${data.id}`}
                               className="font-semibold "
                             >
@@ -135,6 +137,7 @@ export default function BodyCategory({
                       />
                       <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                         <Link
+                        aria-label="link to different page"
                           href={`/post/${data.id}`}
                           className="font-semibold "
                         >
@@ -171,6 +174,7 @@ export default function BodyCategory({
                       />
                       <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                         <Link
+                        aria-label="link to different page"
                           href={`/post/${data.id}`}
                           className="font-semibold "
                         >
@@ -198,10 +202,13 @@ export default function BodyCategory({
                       className=" text-black p-4 flex cursor-pointer bg-white"
                       key={data.id}
                     >
-                      {index + 1}
-                      <Link href={`/post/${data.id}`}>
-                        <li className="mx-2">{data.Judul}</li>
-                      </Link>
+                      <li className="flex items-center justify-start gap-1">
+                        {index + 1}
+                        <Link
+                        aria-label="link to different page" href={`/post/${data.id}`}>
+                          <li className="mx-2">{data.Judul}</li>
+                        </Link>
+                      </li>
                     </ul>
                   ))}
                 </div>

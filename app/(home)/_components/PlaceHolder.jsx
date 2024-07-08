@@ -5,7 +5,7 @@ export default function PlaceHolder() {
     <div className="flex p-4 sm:py-4">
       <div className="min-w-40 sm:min-w-28 pr-4 h-fit">Loading</div>
       <div className="flex-col">
-        <Link href={`/post/${data.id}`} className="font-semibold ">
+        <Link aria-label="link to different page" href={`/post/${data.id}`} className="font-semibold ">
           {data.Judul}
         </Link>
         <span className="flex items-center">

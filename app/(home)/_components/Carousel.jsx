@@ -9,6 +9,7 @@ export default function Carousel({ items }) {
         <div className=" bg-black">
           <div className=" shadow-md overflow-hidden">
             <Link
+              aria-label="link to different page"
               href={
                 "https://inforadar.disway.id/read/670787/8-kebiasaan-kecil-yang-membuat-seseorang-terlihat-sangat-menarik-dimata-orang-lain-cek-apa-saja"
               }
@@ -37,7 +38,8 @@ export default function Carousel({ items }) {
             {items?.slice(0, 4).map((item) => (
               <div className="" key={item.id}>
                 <div className="px-2 shadow-md">
-                  <Link href={`/post/${item.id}`}>
+                  <Link
+                    aria-label="link to different page" href={`/post/${item.id}`}>
                     z
                     <Image
                       src={item.ImageURL}

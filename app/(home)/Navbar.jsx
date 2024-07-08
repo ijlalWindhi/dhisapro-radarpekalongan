@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <header className="container flex justify-between p-4 mx-auto">
       <div className="w-1/6 h-fit sm:hidden">
-        <Link href="/">
+        <Link aria-label="link to different page" href="/">
           <Image
             src="/Logo Radar Pekalongan 1.webp"
             width={250}
@@ -44,11 +44,11 @@ export default function Navbar() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <Link href={`/search?search=${query}`} onClick={handleSearch}>
+        <Link aria-label="link to different page" href={`/search?search=${query}`} onClick={handleSearch}>
           <AiOutlineSearch className="md:h-14 h-fit w-20 bg-slate-500 text-white rounded-r-lg p-2 sm:w-8" />
         </Link>
       </div>
-      <Link href={"/network"}>
+      <Link aria-label="link to different page" href={"/network"}>
         <button className="bg-red-600 rounded-md md:w-40 md:h-14 text-white p-2 sm:h-10 sm:mx-4">
           Network
         </button>
@@ -56,24 +56,24 @@ export default function Navbar() {
       <div className="sm:w-1/3">
         <span>{formattedDate}</span>
         <ul className="flex">
-          <Link href={"https://web.facebook.com/radarpekalongan/"}>
-            <li>
+          <li>
+            <Link aria-label="link to different page" href={"https://web.facebook.com/radarpekalongan/"}>
               <AiFillFacebook className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
-            </li>
-          </Link>
+            </Link>
+          </li>
           <li>
             <AiFillTwitterCircle className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
           </li>
-          <Link href={"https://www.instagram.com/radarpekalongan/"}>
-            <li>
+          <li>
+            <Link aria-label="link to different page" href={"https://www.instagram.com/radarpekalongan/"}>
               <AiFillInstagram className="w-8 h-8 text-pink-600 sm:mx-1 sm:w-4" />
-            </li>
-          </Link>
-          <Link href={"https://www.youtube.com/@Radarpekalonganonline"}>
-            <li>
+            </Link>
+          </li>
+          <li>  
+            <Link aria-label="link to different page" href={"https://www.youtube.com/@Radarpekalonganonline"}>
               <AiFillYoutube className="w-8 h-8 text-red-600 sm:mx-1 sm:w-4" />
-            </li>
-          </Link>
+            </Link>
+          </li>
           <li>
             <AiOutlineWhatsApp className="w-8 h-8 text-green-500 sm:mx-1 sm:w-4" />
           </li>

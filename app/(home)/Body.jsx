@@ -60,6 +60,7 @@ export default function Body({
                         <Link
                           href={`/post/${data.id}`}
                           className="font-semibold "
+                          aria-label="link to post"
                         >
                           {data.Judul}
                         </Link>
@@ -93,6 +94,7 @@ export default function Body({
                             <Link
                               href={`/post/${data.id}`}
                               className="font-semibold "
+                              aria-label="link to post"
                             >
                               {data.Judul}
                             </Link>
@@ -142,6 +144,7 @@ export default function Body({
                         <Link
                           href={`/post/${data.id}`}
                           className="font-semibold "
+                          aria-label="link to post"
                         >
                           {data.Judul}
                         </Link>
@@ -167,10 +170,15 @@ export default function Body({
                       className=" text-black p-4 flex cursor-pointer bg-white"
                       key={data.id}
                     >
-                      {index + 1}
-                      <Link href={`/post/${data.id}`}>
-                        <li className="mx-2">{data.Judul}</li>
-                      </Link>
+                      <li className="flex items-center justify-center gap-2">
+                        {index + 1}
+                        <Link
+                          href={`/post/${data.id}`}
+                          aria-label="link to post"
+                        >
+                          {data.Judul}
+                        </Link>
+                      </li>
                     </ul>
                   ))}
                 </div>
@@ -195,6 +203,7 @@ export default function Body({
                         <Link
                           href={`/post/${data.id}`}
                           className="font-semibold "
+                          aria-label="link to post"
                         >
                           {data.Judul}
                         </Link>
@@ -238,6 +247,7 @@ export default function Body({
                         <Link
                           href={`/post/${data.id}`}
                           className="font-semibold "
+                          aria-label="link to post"
                         >
                           {data.Judul}
                         </Link>

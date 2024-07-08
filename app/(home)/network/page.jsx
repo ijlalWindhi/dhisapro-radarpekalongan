@@ -6,275 +6,527 @@ export default function page() {
       <h2 className="text-center text-xl font-bold mb-8">NETWORK</h2>
       <div className="grid grid-cols-4 gap-4 sm:grid-cols-2 sm:gap">
         <ul className="list-disc list-inside">
+          <li className="text-blue-500 hover:underline">
           <Link
+          aria-label="link to different page"
             href={"https://radarpekalongan.disway.id/network/list-network#"}
           >
-            <li className="text-blue-500 hover:underline">Aceh</li>
+            Aceh
           </Link>
-          <Link href={"https://babelpos.disway.id/"}>
-            <li className="text-blue-500 hover:underline">Babelpos</li>
-          </Link>
-          <Link href={"https://www.bantenraya.com/"}>
-            <li className="text-blue-500 hover:underline">Banten Raya</li>
-          </Link>
-          <Link href={"https://bantentv.com/#"}>
-            <li className="text-blue-500 hover:underline">Banten TV</li>
-          </Link>
-          <Link href={"https://belitongekspres.disway.id/#"}>
-            <li className="text-blue-500 hover:underline">Belitong Ekspres</li>
-          </Link>
-          <Link href={"https://jambiekspres.disway.id/"}>
-            <li className="text-blue-500 hover:underline">Jambi Ekspres</li>
-          </Link>
-          <Link href={"https://jambiindependent.disway.id/"}>
-            <li className="text-blue-500 hover:underline">Jambi Independent</li>
-          </Link>
-          <Link href={"https://jambitv.disway.id"}>
-            <li className="text-blue-500 hover:underline">Jambi TV</li>
-          </Link>
-          <Link href={"https://jektvnews.disway.id"}>
-            <li className="text-blue-500 hover:underline">JEKTV</li>
-          </Link>
-          <Link href={"https://karawangbekasi.disway.id"}>
-            <li className="text-blue-500 hover:underline">Karawang Bekasi</li>
-          </Link>
-          <Link href={"https://palpres.disway.id"}>
-            <li className="text-blue-500 hover:underline">Palpres</li>
-          </Link>
-          <Link href={"https://paltv.disway.id"}>
-            <li className="text-blue-500 hover:underline">PALTV</li>
-          </Link>
-          <Link href={"https://pasundanekspres.id/"}>
-            <li className="text-blue-500 hover:underline">Pasundan Ekpsres</li>
-          </Link>
-          <Link href={"https://pontianakinfo.disway.id"}>
-            <li className="text-blue-500 hover:underline">Pontianak Info</li>
-          </Link>
-          <Link href={"https://prabumulihpos.disway.id"}>
-            <li className="text-blue-500 hover:underline">Prabumulihpos</li>
-          </Link>
-          <Link href={"https://radarpekalongan.disway.id/"}>
-            <li className="text-blue-500 hover:underline">Radar Pekalongan</li>
-          </Link>
-          <Link href={"https://radarpena.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Pena</li>
-          </Link>
-          <Link href={"https://radarselatan.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Pena</li>
-          </Link>
-          <Link href={"https://radarseluma.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Seluma</li>
-          </Link>
-          <Link href={"https://radartanggamus.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Tanggamus</li>
-          </Link>
-          <Link href={"https://sukabumi.jabarekspres.com/"}>
-            <li className="text-blue-500 hover:underline">Sukabumi</li>
-          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
           <Link
+          aria-label="link to different page" href={"https://babelpos.disway.id/"}>
+            Babelpos
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://www.bantenraya.com/"}>
+            Banten Raya
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://bantentv.com/#"}>
+            Banten TV
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://belitongekspres.disway.id/#"}>
+            Belitong Ekspres
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://jambiekspres.disway.id/"}>
+            Jambi Ekspres
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://jambiindependent.disway.id/"}>
+            Jambi Independent
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://jambitv.disway.id"}>
+            Jambi TV
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://jektvnews.disway.id"}>
+            JEKTV
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://karawangbekasi.disway.id"}>
+            Karawang Bekasi
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://palpres.disway.id"}>
+            Palpres
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://paltv.disway.id"}>
+            PALTV
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://pasundanekspres.id/"}>
+            Pasundan Ekpsres
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://pontianakinfo.disway.id"}>
+            Pontianak Info
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://prabumulihpos.disway.id"}>
+            Prabumulihpos
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarpekalongan.disway.id/"}>
+            Radar Pekalongan
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarpena.disway.id"}>
+            Radar Pena
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarselatan.disway.id"}>
+            Radar Pena
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarseluma.disway.id"}>
+            Radar Seluma
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radartanggamus.disway.id"}>
+            Radar Tanggamus
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://sukabumi.jabarekspres.com/"}>
+            Sukabumi
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page"
             href={"https://radarpekalongan.disway.id/network/list-network#"}
           >
-            <li className="text-blue-500 hover:underline">Sumatera Barat</li>
+            Sumatera Barat
           </Link>
-          <Link href={"https://sumedang.jabarekspres.com/"}>
-            <li className="text-blue-500 hover:underline">Sumedang</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://sumedang.jabarekspres.com/"}>
+            Sumedang
           </Link>
-          <Link href={"https://sumeksradio.disway.id"}>
-            <li className="text-blue-500 hover:underline">Sumeks Radio</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://sumeksradio.disway.id"}>
+            Sumeks Radio
           </Link>
-          <Link href={"https://sumeks.disway.id"}>
-            <li className="text-blue-500 hover:underline">Sumeks.co</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://sumeks.disway.id"}>
+            Sumeks.co
           </Link>
+          </li>
         </ul>
         <ul className="list-disc list-inside">
-          <Link href={"https://bengkuluekspress.disway.id"}>
-            <li className="text-blue-500 hover:underline">Bengkulu Ekspress</li>
-          </Link>
-          <Link href={"https://betv.disway.id"}>
-            <li className="text-blue-500 hover:underline">BETV</li>
-          </Link>
-          <Link href={"https://cianjurekspres.disway.id"}>
-            <li className="text-blue-500 hover:underline">Cianjur Ekspres</li>
-          </Link>
-          <Link href={"https://curupekspress.disway.id"}>
-            <li className="text-blue-500 hover:underline">Curup Ekspres</li>
-          </Link>
-          <Link href={"https://disway.id"}>
-            <li className="text-blue-500 hover:underline">Disway</li>
-          </Link>
+          <li className="text-blue-500 hover:underline">
           <Link
+          aria-label="link to different page" href={"https://bengkuluekspress.disway.id"}>
+            Bengkulu Ekspress
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://betv.disway.id"}>
+            BETV
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://cianjurekspres.disway.id"}>
+            Cianjur Ekspres
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://curupekspress.disway.id"}>
+            Curup Ekspres
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://disway.id"}>
+            Disway
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page"
             href={"https://radarpekalongan.disway.id/network/list-network#"}
           >
-            <li className="text-blue-500 hover:underline">Kepulauan Riau</li>
+            Kepulauan Riau
           </Link>
-          <Link href={"https://lahatpos.disway.id"}>
-            <li className="text-blue-500 hover:underline">Lahatpos</li>
-          </Link>
-          <Link href={"https://lampungnewspaper.disway.id"}>
-            <li className="text-blue-500 hover:underline">LampungNewspaper</li>
-          </Link>
-          <Link href={"https://magelangekspres.disway.id"}>
-            <li className="text-blue-500 hover:underline">Magelang Ekspres</li>
-          </Link>
-          <Link href={"https://www.radarbanten.co.id/"}>
-            <li className="text-blue-500 hover:underline">Radar Banten</li>
-          </Link>
-          <Link href={"https://radarbanyumas.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Banyumas</li>
-          </Link>
-          <Link href={"https://radarcirebon.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Cirebon</li>
-          </Link>
-          <Link href={"https://radargarut.jabarekspres.com/"}>
-            <li className="text-blue-500 hover:underline">Radar garut</li>
-          </Link>
-          <Link href={"https://radartasik.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Tasik</li>
-          </Link>
-          <Link href={"https://radartasiktv.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Tasikmalaya</li>
-          </Link>
-          <Link href={"https://radartegal.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Tegal</li>
-          </Link>
-          <Link href={"https://radartuba.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Tuba</li>
-          </Link>
-          <Link href={"https://sumeks.disway.id"}>
-            <li className="text-blue-500 hover:underline">Sumeks.co</li>
-          </Link>
-          <Link href={"https://radarutara.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Utara</li>
-          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
           <Link
+          aria-label="link to different page" href={"https://lahatpos.disway.id"}>
+            Lahatpos
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://lampungnewspaper.disway.id"}>
+            LampungNewspaper
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://magelangekspres.disway.id"}>
+            Magelang Ekspres
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://www.radarbanten.co.id/"}>
+            Radar Banten
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarbanyumas.disway.id"}>
+            Radar Banyumas
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarcirebon.disway.id"}>
+            Radar Cirebon
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radargarut.jabarekspres.com/"}>
+            Radar garut
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radartasik.disway.id"}>
+            Radar Tasik
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radartasiktv.disway.id"}>
+            Radar Tasikmalaya
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radartegal.disway.id"}>
+            Radar Tegal
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radartuba.disway.id"}>
+            Radar Tuba
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://sumeks.disway.id"}>
+            Sumeks.co
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarutara.disway.id"}>
+            Radar Utara
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page"
             href={"https://radarpekalongan.disway.id/network/list-network#"}
           >
-            <li className="text-blue-500 hover:underline">Sumut</li>
+            Sumut
           </Link>
+          </li>
         </ul>
         <ul className="list-disc list-inside">
-          <Link href={"https://jateng.disway.id"}>
-            <li className="text-blue-500 hover:underline">Disway Jateng</li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://jateng.disway.id"}>
+            Disway Jateng
           </Link>
+          </li>
 
-          <Link href={"https://jogja.disway.id"}>
-            <li className="text-blue-500 hover:underline">Disway Jogja</li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://jogja.disway.id"}>
+            Disway Jogja
           </Link>
-          <Link href={"https://enimekspres.disway.id"}>
-            <li className="text-blue-500 hover:underline">Enime Ekspress</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://enimekspres.disway.id"}>
+            Enime Ekspress
           </Link>
-          <Link href={"https://fin.co.id"}>
-            <li className="text-blue-500 hover:underline">FIN</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://fin.co.id"}>
+            FIN
           </Link>
-          <Link href={"https://harianbanyuasin.disway.id"}>
-            <li className="text-blue-500 hover:underline">Harian Banyusin</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://harianbanyuasin.disway.id"}>
+            Harian Banyusin
           </Link>
-          <Link href={"https://medialampung.disway.id"}>
-            <li className="text-blue-500 hover:underline">Media Lampung</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://medialampung.disway.id"}>
+            Media Lampung
           </Link>
-          <Link href={"https://memorandum.disway.id"}>
-            <li className="text-blue-500 hover:underline">Memorandum</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://memorandum.disway.id"}>
+            Memorandum
           </Link>
-          <Link href={"https://nomorsatukaltim.disway.id"}>
-            <li className="text-blue-500 hover:underline">Nomorsatukaltim</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://nomorsatukaltim.disway.id"}>
+            Nomorsatukaltim
           </Link>
-          <Link href={"https://oganilir.disway.id"}>
-            <li className="text-blue-500 hover:underline">Organilir</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://oganilir.disway.id"}>
+            Organilir
           </Link>
-          <Link href={"https://okes.disway.id"}>
-            <li className="text-blue-500 hover:underline">Okes</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://okes.disway.id"}>
+            Okes
           </Link>
-          <Link href={"https://radarindramayu.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Indramayu</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarindramayu.disway.id"}>
+            Radar Indramayu
           </Link>
-          <Link href={"https://radarjabar.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Jabar</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarjabar.disway.id"}>
+            Radar Jabar
           </Link>
-          <Link href={"https://radarkaur.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Kaur</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarkaur.disway.id"}>
+            Radar Kaur
           </Link>
-          <Link href={"https://radarkepahiang.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Kepahiang</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarkepahiang.disway.id"}>
+            Radar Kepahiang
           </Link>
-          <Link href={"https://radarkuningan.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Kuningan</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarkuningan.disway.id"}>
+            Radar Kuningan
           </Link>
-          <Link href={"https://radarmetro.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Metro</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarmetro.disway.id"}>
+            Radar Metro
           </Link>
-          <Link href={"https://radartv.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar TV</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radartv.disway.id"}>
+            Radar TV
           </Link>
-          <Link href={"https://rakyatbenteng.disway.id"}>
-            <li className="text-blue-500 hover:underline">Rakyat Benteng</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://rakyatbenteng.disway.id"}>
+            Rakyat Benteng
           </Link>
-          <Link href={"https://rakyatcirebon.disway.id"}>
-            <li className="text-blue-500 hover:underline">Rakyat Cirebon</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://rakyatcirebon.disway.id"}>
+            Rakyat Cirebon
           </Link>
+          </li>
         </ul>
         <ul className="list-disc list-inside">
-          <Link href={"https://harian.disway.id"}>
-            <li className="text-blue-500 hover:underline">Harian Disway</li>
-          </Link>
-          <Link href={"https://harianmuba.disway.id"}>
-            <li className="text-blue-500 hover:underline">Harianmuba</li>
-          </Link>
-          <Link href={"https://iknpos.id/"}>
-            <li className="text-blue-500 hover:underline">IKN Pos</li>
-          </Link>
-          <Link href={"https://inforadar.disway.id"}>
-            <li className="text-blue-500 hover:underline">Inforadar</li>
-          </Link>
-          <Link href={"https://jabarekspres.com/"}>
-            <li className="text-blue-500 hover:underline">Jabar Ekspress</li>
-          </Link>
-          <Link href={"https://okinews.disway.id/"}>
-            <li className="text-blue-500 hover:underline">OKINEWS</li>
-          </Link>
-          <Link href={"https://okuselatan.disway.id"}>
-            <li className="text-blue-500 hover:underline">Oku Selatan</li>
-          </Link>
-          <Link href={"https://okutimurpos.disway.id"}>
-            <li className="text-blue-500 hover:underline">OKU Timur Pos</li>
-          </Link>
-          <Link href={"https://pagaralampos.disway.id"}>
-            <li className="text-blue-500 hover:underline">Pagaralampos</li>
-          </Link>
-          <Link href={"https://palpos.disway.id"}>
-            <li className="text-blue-500 hover:underline">Palpos</li>
-          </Link>
-          <Link href={"https://radarlampung.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Lampung</li>
-          </Link>
-          <Link href={"https://radarlamsel.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Lamsel</li>
-          </Link>
-          <Link href={"https://radarlebong.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Lebong</li>
-          </Link>
-          <Link href={"https://radarmajalengka.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Majalengka</li>
-          </Link>
-          <Link href={"https://radarpalembang.disway.id"}>
-            <li className="text-blue-500 hover:underline">Radar Palembang</li>
-          </Link>
-          <Link href={"https://rakyatempatlawang.disway.id"}>
-            <li className="text-blue-500 hover:underline">RakyatEmpatLawang</li>
-          </Link>
-          <Link href={"https://rbtv.disway.id"}>
-            <li className="text-blue-500 hover:underline">RBTV</li>
-          </Link>
+          <li className="text-blue-500 hover:underline">
           <Link
+          aria-label="link to different page" href={"https://harian.disway.id"}>
+            Harian Disway
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://harianmuba.disway.id"}>
+            Harianmuba
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://iknpos.id/"}>
+            IKN Pos
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://inforadar.disway.id"}>
+            Inforadar
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://jabarekspres.com/"}>
+            Jabar Ekspress
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://okinews.disway.id/"}>
+            OKINEWS
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://okuselatan.disway.id"}>
+            Oku Selatan
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://okutimurpos.disway.id"}>
+            OKU Timur Pos
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://pagaralampos.disway.id"}>
+            Pagaralampos
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://palpos.disway.id"}>
+            Palpos
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarlampung.disway.id"}>
+            Radar Lampung
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarlamsel.disway.id"}>
+            Radar Lamsel
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarlebong.disway.id"}>
+            Radar Lebong
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarmajalengka.disway.id"}>
+            Radar Majalengka
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarpalembang.disway.id"}>
+            Radar Palembang
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://rakyatempatlawang.disway.id"}>
+            RakyatEmpatLawang
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://rbtv.disway.id"}>
+            RBTV
+          </Link>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page"
             href={"https://radarpekalongan.disway.id/network/list-network#"}
           >
-            <li className="text-blue-500 hover:underline">Riau</li>
+            Riau
           </Link>
-          <Link href={"https://radarmukomuko.disway.id"}>
-            <li className="text-blue-500 hover:underline">RM Online</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://radarmukomuko.disway.id"}>
+            RM Online
           </Link>
-          <Link href={"https://silamparitv.disway.id"}>
-            <li className="text-blue-500 hover:underline">SilampariTV</li>
+          </li>
+          <li className="text-blue-500 hover:underline">
+          <Link
+          aria-label="link to different page" href={"https://silamparitv.disway.id"}>
+            SilampariTV
           </Link>
+          </li>
         </ul>
       </div>
     </div>

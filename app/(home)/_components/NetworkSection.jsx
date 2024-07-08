@@ -6,7 +6,8 @@ export default function NetworkSection({ title, src = "/network" }) {
     <div className="container md:mx-auto">
       <div className=" flex justify-between">
         <h2 className="font-semibold">{title}</h2>
-        <Link href={src}>
+        <Link
+        aria-label="link to different page" href={src}>
           <h2 className="font-semibold">Lihat Semua</h2>
         </Link>
       </div>
@@ -14,6 +15,7 @@ export default function NetworkSection({ title, src = "/network" }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className=" shadow-md rounded-lg overflow-hidden">
             <Link
+            aria-label="link to different page"
               href={
                 "https://inforadar.disway.id/read/670787/8-kebiasaan-kecil-yang-membuat-seseorang-terlihat-sangat-menarik-dimata-orang-lain-cek-apa-saja"
               }
@@ -36,6 +38,7 @@ export default function NetworkSection({ title, src = "/network" }) {
           </div>
           <div className=" shadow-md rounded-lg overflow-hidden">
             <Link
+            aria-label="link to different page"
               href={
                 "https://okuselatan.disway.id/read/647795/siap-siap-sriwijaya-ranau-grand-fondo-2024-segera-hadir-kembali-di-oku-selatan"
               }
@@ -58,6 +61,7 @@ export default function NetworkSection({ title, src = "/network" }) {
           </div>
           <div className=" shadow-md rounded-lg overflow-hidden">
             <Link
+            aria-label="link to different page"
               href={
                 "https://disway.id/read/799186/tidak-perlu-antre-servis-motor-listrik-honda-di-bengkel-ahass-dapat-jalur-fast-track"
               }
@@ -80,6 +84,7 @@ export default function NetworkSection({ title, src = "/network" }) {
           </div>
           <div className=" shadow-md rounded-lg overflow-hidden">
             <Link
+            aria-label="link to different page"
               href={
                 "https://okes.disway.id/read/649598/waw-pelatih-gereja-memimpin-paduan-suara-di-mtq-ini"
               }

@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="bg-white rounded-lg shadow dark:bg-gray-900 m-4 w-full mx-auto p-4 md:py-8 h-fit">
       <div className="flex justify-between sm:flex-col sm:items-center sm:justify-between">
-        <Link
+        <Link aria-label="link to page"
           href={"/"}
           className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
         >
@@ -28,29 +29,23 @@ export default function Footer() {
           </span>
         </Link>
         <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 sm:my-4">
-          <li>
-            <Link
-              href={"/Tentang-kami"}
-              className="hover:underline me-4 md:me-6"
-            >
+          <li className="hover:underline me-4 md:me-6">
+            <Link aria-label="link to page" href={"/Tentang-kami"}>
               Tentang Kami
             </Link>
           </li>
-          <li>
-            <Link
-              href={"/Privacy-policy"}
-              className="hover:underline me-4 md:me-6"
-            >
+          <li className="hover:underline me-4 md:me-6">
+            <Link aria-label="link to page" href={"/Privacy-policy"}>
               Privacy Policy
             </Link>
           </li>
-          <li>
-            <Link href={"/Redaksi"} className="hover:underline me-4 md:me-6">
+          <li className="hover:underline me-4 md:me-6">
+            <Link aria-label="link to page" href={"/Redaksi"}>
               Redaksi
             </Link>
           </li>
-          <li>
-            <Link href={"/kontak"} className="hover:underline">
+          <li className="hover:underline">
+            <Link aria-label="link to page" href={"/kontak"}>
               Kontak
             </Link>
           </li>
@@ -62,19 +57,19 @@ export default function Footer() {
             {/* Logo and Social Media */}
             <div className="w-full md:w-1/3 mb-4 md:mb-0">
               <div className="flex space-x-4">
-                <Link href={"https://web.facebook.com/radarpekalongan/"}>
+                <Link aria-label="link to page" href={"https://web.facebook.com/radarpekalongan/"}>
                   <AiFillFacebook className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
                 </Link>
-                <Link href="#">
+                <Link aria-label="link to page" href="#">
                   <AiFillTwitterCircle className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
                 </Link>
-                <Link href={"https://www.youtube.com/@Radarpekalonganonline"}>
+                <Link aria-label="link to page" href={"https://www.youtube.com/@Radarpekalonganonline"}>
                   <AiFillYoutube className="w-8 h-8 text-red-600 sm:mx-1 sm:w-4" />
                 </Link>
-                <Link href={"https://www.instagram.com/radarpekalongan/"}>
+                <Link aria-label="link to page" href={"https://www.instagram.com/radarpekalongan/"}>
                   <AiFillInstagram className="w-8 h-8 text-pink-600 sm:mx-1 sm:w-4" />
                 </Link>
-                <Link href="#">
+                <Link aria-label="link to page" href="#">
                   <AiOutlineWhatsApp className="w-8 h-8 text-green-500 sm:mx-1 sm:w-4" />
                 </Link>
               </div>
@@ -90,7 +85,7 @@ export default function Footer() {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm">
                 <ul>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://bantentv.com/"
                       className="text-blue-600"
                     >
@@ -98,7 +93,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://www.bantenraya.com/"
                       className="text-blue-600"
                     >
@@ -106,7 +101,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://www.radarbanten.co.id/"
                       className="text-blue-600"
                     >
@@ -114,7 +109,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://radargarut.jabarekspres.com/"
                       className="text-blue-600"
                     >
@@ -122,7 +117,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://sukabumi.jabarekspres.com/"
                       className="text-blue-600"
                     >
@@ -132,7 +127,7 @@ export default function Footer() {
                 </ul>
                 <ul>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://sumedang.jabarekspres.com/"
                       className="text-blue-600"
                     >
@@ -140,7 +135,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://pasundanekspres.id/"
                       className="text-blue-600"
                     >
@@ -148,7 +143,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://jabarekspres.com/"
                       className="text-blue-600"
                     >
@@ -156,19 +151,19 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://iknpos.id/" className="text-blue-600">
+                    <Link aria-label="link to page" href="https://iknpos.id/" className="text-blue-600">
                       IKN Pos
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://fin.co.id/" className="text-blue-600">
+                    <Link aria-label="link to page" href="https://fin.co.id/" className="text-blue-600">
                       FIN
                     </Link>
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
                       className="text-blue-600"
                     >
@@ -176,7 +171,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
                       className="text-blue-600"
                     >
@@ -184,7 +179,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
                       className="text-blue-600"
                     >
@@ -192,7 +187,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
                       className="text-blue-600"
                     >
@@ -200,7 +195,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://radarpekalongan.disway.id/kategori/1/pekalongan#"
                       className="text-blue-600"
                     >
@@ -210,7 +205,7 @@ export default function Footer() {
                 </ul>
                 <ul>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://radarpena.disway.id/"
                       className="text-blue-600"
                     >
@@ -218,7 +213,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://pontianakinfo.disway.id"
                       className="text-blue-600"
                     >
@@ -226,7 +221,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://silamparitv.disway.id/"
                       className="text-blue-600"
                     >
@@ -234,7 +229,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://okinews.disway.id/"
                       className="text-blue-600"
                     >
@@ -242,7 +237,7 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    <Link aria-label="link to page"
                       href="https://tangerangekspres.disway.id"
                       className="text-blue-600"
                     >
@@ -254,7 +249,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="mt-4 text-center">
-            <Link href="/network" className="text-blue-600">
+            <Link aria-label="link to page" href="/network" className="text-blue-600">
               Lihat Semua
             </Link>
           </div>
@@ -263,7 +258,7 @@ export default function Footer() {
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © 2024{" "}
-        <Link href={"/"} className="hover:underline">
+        <Link aria-label="link to page" href={"/"} className="hover:underline">
           RADAR PEKALONGAN™
         </Link>
         . All Rights Reserved.

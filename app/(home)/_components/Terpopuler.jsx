@@ -9,10 +9,12 @@ export default function Terpopuler({ data }) {
           className="bg-slate-400 text-white p-4 flex cursor-pointer"
           key={data.id}
         >
-          {index + 1}
-          <Link href={`/post/${data.id}`}>
-            <li className="mx-2">{data.Judul}</li>
-          </Link>
+          <li className="flex items-center justify-start gap-1">
+            {index + 1}
+            <Link aria-label="link to different page" href={`/post/${data.id}`}>
+              <li className="mx-2">{data.Judul}</li>
+            </Link>
+          </li>
         </ul>
       ))}
     </div>
