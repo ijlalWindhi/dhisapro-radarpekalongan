@@ -88,7 +88,7 @@ export default function Body({
                     title ? title : "Berita Terkini"
                   }`}</h1>
                   {data?.slice(0, 5)?.map((data) => (
-                    <div className="flex p-4 sm:py-4" key={data.id}>
+                    <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
                       <Image
                         lazy
                         quality={10}
@@ -97,7 +97,7 @@ export default function Body({
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
                         alt=""
-                        className="min-w-40 sm:min-w-28 pr-4 object-cover object-center"
+                        className="min-w-40 sm:min-w-28 object-cover object-center"
                       />
                       <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                         <Link
@@ -124,7 +124,7 @@ export default function Body({
                   <div>
                     <div className="h-full ">
                       {data?.slice(6, 10)?.map((data) => (
-                        <div className="flex p-4 sm:py-4" key={data.id}>
+                        <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
                           <Image
                             lazy
                             quality={10}
@@ -133,7 +133,7 @@ export default function Body({
                             height={150}
                             src={data.ImageURL ? data.ImageURL : ""}
                             alt=""
-                            className="min-w-40 sm:min-w-28 pr-4 object-cover object-center"
+                            className="min-w-40 sm:min-w-28 object-cover object-center"
                           />
                           <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                             <Link
@@ -176,7 +176,7 @@ export default function Body({
               <div>
                 <div className="h-full ">
                   {data?.slice(11, 15)?.map((data) => (
-                    <div className="flex p-4 sm:py-4" key={data.id}>
+                    <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
                       <Image
                         lazy
                         quality={10}
@@ -185,7 +185,7 @@ export default function Body({
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
                         alt=""
-                        className="min-w-40 sm:min-w-28 pr-4 object-cover object-center"
+                        className="min-w-40 sm:min-w-28 object-cover object-center"
                       />
                       <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                         <Link
@@ -237,7 +237,7 @@ export default function Body({
               <div>
                 <div className="h-full ">
                   {data?.slice(16, 20)?.map((data) => (
-                    <div className="flex p-4 sm:py-4" key={data.id}>
+                    <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
                       <Image
                         lazy
                         quality={10}
@@ -246,7 +246,7 @@ export default function Body({
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
                         alt=""
-                        className="min-w-40 sm:min-w-28 pr-4 object-cover object-center"
+                        className="min-w-40 sm:min-w-28 object-cover object-center"
                       />
                       <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                         <Link
@@ -283,7 +283,7 @@ export default function Body({
               <div>
                 <div className="h-full ">
                   {data?.slice(21, 24)?.map((data) => (
-                    <div className="flex p-4 sm:py-4" key={data.id}>
+                    <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
                       <Image
                         lazy
                         quality={10}
@@ -292,7 +292,7 @@ export default function Body({
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
                         alt=""
-                        className="min-w-40 sm:min-w-28 pr-4 object-cover object-center"
+                        className="min-w-40 sm:min-w-28 object-cover object-center"
                       />
                       <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                         <Link
