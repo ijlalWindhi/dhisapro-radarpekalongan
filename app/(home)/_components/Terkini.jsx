@@ -12,7 +12,7 @@ export default function Terkini({ data, title = "TERKINI" }) {
             height={100}
             src={data.ImageURL ? data.ImageURL : ""}
             alt=""
-            className="min-w-40 sm:min-w-28 pr-4 "
+            className="min-w-40 sm:min-w-28 pr-4 object-cover object-center"
           />
           <div className="flex flex-col justify-between">
             <h2 className="text-sm font-bold">{data.Judul}</h2>

@@ -54,7 +54,7 @@ export default function Body({
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
                         alt=""
-                        className="min-w-40 sm:min-w-28 pr-4 "
+                        className="min-w-40 sm:min-w-28 pr-4 object-cover object-center"
                       />
                       <div className="flex-col min-w-40 sm:min-w-28 h-fit">
                         <Link
