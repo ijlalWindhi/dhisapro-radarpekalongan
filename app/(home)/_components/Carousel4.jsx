@@ -23,15 +23,16 @@ export default function Carousel4() {
     "https://getwallpapers.com/wallpaper/full/5/c/0/606489.jpg",
   ];
   return (
-    <div className="overflow-hidden relative max-w-lg w-full h-32 md:h-auto m-5 md:m-0">
+    <div className="overflow-hidden relative max-w-lg w-72 h-32 md:w-full md:h-auto m-5 md:m-0">
       <div
-        className={`flex transition ease-out duration-40`}
+        className={`flex transition ease-out duration-40 w-72 h-32 md:w-full md:h-auto`}
         style={{
-          transform: `translateX(-${current * 100}%)`,
+          transform: `translateX(-${current * 25}%)`,
+          width: `${slides.length * 100}%`,
         }}
       >
         {slides.map((s) => {
-          return <img key={s} src={s} alt="caraousel" />;
+          return <img key={s} src={s} alt="caraousel" className="w-72 h-32 md:w-full md:h-56" />;
         })}
         <div className="absolute">
           <p>bebas</p>
