@@ -58,7 +58,6 @@ export default function Carousel4() {
               className={`rounded-full w-5 h-5 cursor-pointer  ${
                 i == current ? "bg-white" : "bg-gray-500"
               }`}
-              aria-label="circle"
             ></div>
           );
         })}
