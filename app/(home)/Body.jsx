@@ -33,6 +33,7 @@ export default function Body({
             {/* <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
               <div className="w-full h-60 bg-white border-b">
                 <Image
+                  lazy
                   src={data[0].ImageURL ? data[0].ImageURL : ""}
                   alt="header"
                   layout="responsive"
@@ -48,6 +49,7 @@ export default function Body({
             >
               <div className="w-full my-auto m-10">
                 <Image
+                  lazy
                   src={data[0].ImageURL ? data[0].ImageURL : ""}
                   alt="Header"
                   width={500}
@@ -66,6 +68,7 @@ export default function Body({
             >
               <div className="w-full my-auto m-10">
                 <Image
+                  lazy
                   src={data[1].ImageURL ? data[1].ImageURL : ""}
                   alt="Header"
                   width={500}
@@ -87,6 +90,7 @@ export default function Body({
                   {data?.slice(0, 5)?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
+                        lazy
                         quality={10}
                         priority
                         width={150}
@@ -122,6 +126,7 @@ export default function Body({
                       {data?.slice(6, 10)?.map((data) => (
                         <div className="flex p-4 sm:py-4" key={data.id}>
                           <Image
+                            lazy
                             quality={10}
                             priority
                             width={150}
@@ -173,6 +178,7 @@ export default function Body({
                   {data?.slice(11, 15)?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
+                        lazy
                         quality={10}
                         priority
                         width={150}
@@ -233,6 +239,7 @@ export default function Body({
                   {data?.slice(16, 20)?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
+                        lazy
                         quality={10}
                         priority
                         width={150}
@@ -278,6 +285,7 @@ export default function Body({
                   {data?.slice(21, 24)?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
+                        lazy
                         quality={10}
                         priority
                         width={150}
