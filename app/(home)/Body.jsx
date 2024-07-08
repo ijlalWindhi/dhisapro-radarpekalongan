@@ -28,14 +28,52 @@ export default function Body({
     <>
       {data ? (
         <div>
-          <div className="container md:mx-auto">
+          <div className="container mx-auto mt-5">
             {/* banner 1 */}
-            <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
-              <div className="w-full bg-white border-b"></div>
+            {/* <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
+              <div className="w-full h-60 bg-white border-b">
+                <Image
+                  src={data[0].ImageURL ? data[0].ImageURL : ""}
+                  alt="header"
+                  layout="responsive"
+                  width={100}
+                  height={100}
+                  priority
+                  className="object-cover object-center h-60 w-full"
+                />
+              </div>
+            </div> */}
+            <div
+              className="w-full flex justify-center h-60"
+            >
+              <div className="w-full my-auto m-5">
+                <Image
+                  src={data[0].ImageURL ? data[0].ImageURL : ""}
+                  alt="Header"
+                  width={500}
+                  height={500}
+                  priority
+                  className="mx-auto object-cover object-center h-60 w-full"
+                />
+              </div>
             </div>
             {/* banner 2 */}
-            <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
+            {/* <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
               <div className="w-full bg-white border-b"></div>
+            </div> */}
+            <div
+              className="w-full flex justify-center mt-5 h-60"
+            >
+              <div className="w-full my-auto m-5">
+                <Image
+                  src={data[1].ImageURL ? data[1].ImageURL : ""}
+                  alt="Header"
+                  width={500}
+                  height={500}
+                  priority
+                  className="mx-auto object-cover object-center h-60 w-full"
+                />
+              </div>
             </div>
             <div className="flex justify-center p-5 sm:flex-col">
               <div>
