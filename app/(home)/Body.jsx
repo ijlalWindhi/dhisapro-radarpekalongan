@@ -88,6 +88,7 @@ export default function Body({
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={10}
+                        priority
                         width={150}
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
@@ -122,6 +123,7 @@ export default function Body({
                         <div className="flex p-4 sm:py-4" key={data.id}>
                           <Image
                             quality={10}
+                            priority
                             width={150}
                             height={150}
                             src={data.ImageURL ? data.ImageURL : ""}
@@ -172,6 +174,7 @@ export default function Body({
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={10}
+                        priority
                         width={150}
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
@@ -231,6 +234,7 @@ export default function Body({
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={10}
+                        priority
                         width={150}
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
@@ -275,6 +279,7 @@ export default function Body({
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
                         quality={10}
+                        priority
                         width={150}
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
