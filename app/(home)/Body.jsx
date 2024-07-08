@@ -46,7 +46,7 @@ export default function Body({
             <div
               className="w-full flex justify-center h-60"
             >
-              <div className="w-full my-auto m-5">
+              <div className="w-full my-auto m-10">
                 <Image
                   src={data[0].ImageURL ? data[0].ImageURL : ""}
                   alt="Header"
@@ -64,7 +64,7 @@ export default function Body({
             <div
               className="w-full flex justify-center mt-5 h-60"
             >
-              <div className="w-full my-auto m-5">
+              <div className="w-full my-auto m-10">
                 <Image
                   src={data[1].ImageURL ? data[1].ImageURL : ""}
                   alt="Header"
