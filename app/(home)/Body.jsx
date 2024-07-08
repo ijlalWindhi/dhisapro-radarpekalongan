@@ -87,7 +87,7 @@ export default function Body({
                   {data?.slice(0, 5)?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
-                        quality={30}
+                        quality={10}
                         width={150}
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
@@ -121,7 +121,7 @@ export default function Body({
                       {data?.slice(6, 10)?.map((data) => (
                         <div className="flex p-4 sm:py-4" key={data.id}>
                           <Image
-                            quality={30}
+                            quality={10}
                             width={150}
                             height={150}
                             src={data.ImageURL ? data.ImageURL : ""}
@@ -171,7 +171,7 @@ export default function Body({
                   {data?.slice(11, 15)?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
-                        quality={30}
+                        quality={10}
                         width={150}
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
@@ -230,7 +230,7 @@ export default function Body({
                   {data?.slice(16, 20)?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
-                        quality={30}
+                        quality={10}
                         width={150}
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
@@ -274,7 +274,7 @@ export default function Body({
                   {data?.slice(21, 24)?.map((data) => (
                     <div className="flex p-4 sm:py-4" key={data.id}>
                       <Image
-                        quality={30}
+                        quality={10}
                         width={150}
                         height={150}
                         src={data.ImageURL ? data.ImageURL : ""}
