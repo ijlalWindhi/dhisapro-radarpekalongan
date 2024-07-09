@@ -10,6 +10,30 @@ const nextConfig = {
         port: "",
         pathname: "/storage/v1/object/public/news-image/**",
       },
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com",
+        port: "",
+        pathname: "/originals/**",
+      },
+      {
+        protocol: "https",
+        hostname: "wallpapercave.com",
+        port: "",
+        pathname: "/wp/**",
+      },
+      {
+        protocol: "https",
+        hostname: "getwallpapers.com",
+        port: "",
+        pathname: "/wallpaper/full/**",
+      },
+      {
+        protocol: "https",
+        hostname: "wallpaperaccess.com",
+        port: "",
+        pathname: "/full/**",
+      },
     ],
   },
 };

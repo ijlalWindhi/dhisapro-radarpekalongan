@@ -1,8 +1,8 @@
 "use client";
-
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   AiFillFacebook,
   AiFillInstagram,
@@ -17,25 +17,28 @@ const options = { year: "numeric", month: "long", day: "2-digit" };
 const formattedDate = today.toLocaleDateString("id-ID", options);
 
 export default function Navbar() {
+  const router = useRouter();
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
-    setQuery("");
+    router.push(`/search?q=${query}`);
   };
 
   return (
-    <header className="container flex justify-between p-4 mx-auto">
-      <div className="w-1/6 h-fit sm:hidden">
-        <Link aria-label="link to different page" href="/">
-          <Image
-            src="/Logo Radar Pekalongan 1.webp"
-            width={250}
-            height={250}
-            alt="Radar Pekalongan Logo 1"
-            priority={true}
-          />
-        </Link>
-      </div>
+    <nav className="flex justify-between p-4 mx-auto">
+      <Link
+        aria-label="link to home"
+        href="/"
+        className="sm:hidden relative w-6 h-6 lg:w-56 xl:w-72 md:h-9 object-cover"
+      >
+        <Image
+          src="/Logo Radar Pekalongan 1.webp"
+          alt="Radar Pekalongan Logo 1"
+          fill
+          objectFit="cover"
+          objectPosition="center"
+        />
+      </Link>
       <div className="flex place-content-center w-1/3 sm:w-2/3">
         <input
           type="text"
@@ -44,41 +47,43 @@ export default function Navbar() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <Link aria-label="link to different page" href={`/search?search=${query}`} onClick={handleSearch}>
-          <AiOutlineSearch className="md:h-14 h-fit w-20 bg-slate-500 text-white rounded-r-lg p-2 sm:w-8" />
-        </Link>
+        <AiOutlineSearch
+          className="md:h-14 h-fit w-20 bg-slate-500 cursor-pointer text-white rounded-r-lg p-2 sm:w-8"
+          onClick={handleSearch}
+        />
       </div>
-      <Link aria-label="link to different page" href={"/network"}>
-        <button className="bg-red-600 rounded-md md:w-40 md:h-14 text-white p-2 sm:h-10 sm:mx-4">
-          Network
-        </button>
+      <Link
+        aria-label="link to page network"
+        href={"/network"}
+        className="bg-red-600 rounded-md md:w-40 md:h-14 flex items-center justify-center text-white p-2 sm:h-10 sm:mx-4"
+      >
+        Network
       </Link>
       <div className="sm:w-1/3">
         <span>{formattedDate}</span>
-        <ul className="flex">
-          <li>
-            <Link aria-label="link to different page" href={"https://web.facebook.com/radarpekalongan/"}>
-              <AiFillFacebook className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
-            </Link>
-          </li>
-          <li>
-            <AiFillTwitterCircle className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
-          </li>
-          <li>
-            <Link aria-label="link to different page" href={"https://www.instagram.com/radarpekalongan/"}>
-              <AiFillInstagram className="w-8 h-8 text-pink-600 sm:mx-1 sm:w-4" />
-            </Link>
-          </li>
-          <li>  
-            <Link aria-label="link to different page" href={"https://www.youtube.com/@Radarpekalonganonline"}>
-              <AiFillYoutube className="w-8 h-8 text-red-600 sm:mx-1 sm:w-4" />
-            </Link>
-          </li>
-          <li>
-            <AiOutlineWhatsApp className="w-8 h-8 text-green-500 sm:mx-1 sm:w-4" />
-          </li>
-        </ul>
+        <div className="flex">
+          <Link
+            aria-label="link to different page"
+            href={"https://web.facebook.com/radarpekalongan/"}
+          >
+            <AiFillFacebook className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
+          </Link>
+          <AiFillTwitterCircle className="w-8 h-8 text-blue-400 sm:mx-1 sm:w-4" />
+          <Link
+            aria-label="link to different page"
+            href={"https://www.instagram.com/radarpekalongan/"}
+          >
+            <AiFillInstagram className="w-8 h-8 text-pink-600 sm:mx-1 sm:w-4" />
+          </Link>
+          <Link
+            aria-label="link to different page"
+            href={"https://www.youtube.com/@Radarpekalonganonline"}
+          >
+            <AiFillYoutube className="w-8 h-8 text-red-600 sm:mx-1 sm:w-4" />
+          </Link>
+          <AiOutlineWhatsApp className="w-8 h-8 text-green-500 sm:mx-1 sm:w-4" />
+        </div>
       </div>
-    </header>
+    </nav>
   );
 }

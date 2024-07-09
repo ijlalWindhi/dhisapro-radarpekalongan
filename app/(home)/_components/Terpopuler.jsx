@@ -1,22 +1,25 @@
 import Link from "next/link";
+import React from "react";
 
-export default function Terpopuler({ data }) {
+function Terpopuler({ data }) {
   return (
-    <div>
+    <div className="my-4">
       <h2 className="text-lg font-bold">TERPOPULER</h2>
-      {data?.slice(0, 5).map((data, index) => (
-        <ul
-          className="bg-slate-400 text-white p-4 flex cursor-pointer"
-          key={data.id}
-        >
-          <li className="flex items-center justify-start gap-1">
+      <div className="bg-slate-400 text-black flex flex-col gap-2 p-4">
+        {data?.slice(0, 5).map((data, index) => (
+          <Link
+            key={data.id}
+            aria-label="link to post page"
+            href={`/post/${data.id}`}
+            className="flex items-start justify-start gap-2"
+          >
             {index + 1}
-            <Link aria-label="link to different page" className="mx-2" href={`/post/${data.id}`}>
-              {data.Judul}
-            </Link>
-          </li>
-        </ul>
-      ))}
+            <p>{data.Judul}</p>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
+
+export default Terpopuler;

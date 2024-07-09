@@ -1,338 +1,91 @@
-"use client";
-
 import Image from "next/image";
-import Link from "next/link";
-import ContentLoader from "./_components/ContentLoader";
-// import Pagination from "./components/Pagination";
-import Carousel from "./_components/Carousel";
-import BannerIklan from "./_components/BannerIklan";
+import Header from "./_components/Header";
+import Caraousel from "./_components/Carousel";
 import CatatanDisway from "./_components/CatatanDisway";
 import Terpopuler from "./_components/Terpopuler";
+import Terkini from "./_components/Terkini";
+import CardBerita from "./_components/CardBerita";
 import VideoSection from "./_components/VideoSection";
 import NetworkSection from "./_components/NetworkSection";
-import Terkini from "./_components/Terkini";
-import Carousel2 from "./_components/Carousel2";
-import Carousel3 from "./_components/Carousel3";
-import Carousel4 from "./_components/Carousel4";
+import Pilihan from "./_components/Pilihan";
 
-export default function Body({
-  title,
-  data,
-  // setPage,
-  // page,
-  // getData,
-  // handleNext,
-  // handlePrevious,
-}) {
+function Body({ data, title }) {
   return (
-    <>
-      {data ? (
-        <div>
-          <div className="container mx-auto mt-5">
-            {/* banner 1 */}
-            {/* <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
-              <div className="w-full h-60 bg-white border-b">
-                <Image
-                  lazy
-                  src={data[0].ImageURL ? data[0].ImageURL : ""}
-                  alt="header"
-                  layout="responsive"
-                  width={100}
-                  height={100}
-                  priority
-                  className="object-cover object-center h-60 w-full"
-                />
-              </div>
-            </div> */}
-            <div
-              className="w-full flex justify-center h-32 md:h-60"
-            >
-              <div className="w-full my-auto m-10">
-                <Image
-                  lazy
-                  src={data[0].ImageURL ? data[0].ImageURL : ""}
-                  alt="Header"
-                  width={500}
-                  height={500}
-                  priority
-                  className="mx-auto object-cover object-center h-32 md:h-60 w-full"
-                />
-              </div>
-            </div>
-            {/* banner 2 */}
-            {/* <div className="h-60 m-5 bg-gray-100 flex items-center justify-center">
-              <div className="w-full bg-white border-b"></div>
-            </div> */}
-            <div
-              className="w-full flex justify-center mt-5 h-32 md:h-60"
-            >
-              <div className="w-full my-auto m-10">
-                <Image
-                  lazy
-                  src={data[1].ImageURL ? data[1].ImageURL : ""}
-                  alt="Header"
-                  width={500}
-                  height={500}
-                  priority
-                  className="mx-auto object-cover object-center h-32 md:h-60 w-full"
-                />
-              </div>
-            </div>
-            <div className="flex justify-center p-5 sm:flex-col">
-              <div>
-                {/* <Carousel items={data} /> */}
-                {/* <Carousel3 /> */}
-                <Carousel4 />
-                <div className="h-full ">
-                  <h1 className="text-lg font-bold">{`${
-                    title ? title : "Berita Terkini"
-                  }`}</h1>
-                  {data?.slice(0, 5)?.map((data) => (
-                    <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
-                      <Image
-                        lazy
-                        quality={10}
-                        priority
-                        width={150}
-                        height={150}
-                        src={data.ImageURL ? data.ImageURL : ""}
-                        alt=""
-                        className="min-w-40 sm:min-w-28 object-cover object-center"
-                      />
-                      <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                        <Link
-                          href={`/post/${data.id}`}
-                          className="font-semibold "
-                          aria-label="link to post"
-                        >
-                          {data.Judul}
-                        </Link>
-                        <span className="flex items-center">
-                          <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
-                            {data.Kategori}
-                          </p>
-                          <p className="font-bold text-sm">
-                            {data.created_at.substring(0, 10)}
-                          </p>
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                  <div className="flex justify-center w-full md:p-4">
-                    <BannerIklan src={"/BANNER_DPRD_KOTA.webp"} />
-                  </div>
-                  <div>
-                    <div className="h-full ">
-                      {data?.slice(6, 10)?.map((data) => (
-                        <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
-                          <Image
-                            lazy
-                            quality={10}
-                            priority
-                            width={150}
-                            height={150}
-                            src={data.ImageURL ? data.ImageURL : ""}
-                            alt=""
-                            className="min-w-40 sm:min-w-28 object-cover object-center"
-                          />
-                          <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                            <Link
-                              href={`/post/${data.id}`}
-                              className="font-semibold "
-                              aria-label="link to post"
-                            >
-                              {data.Judul}
-                            </Link>
-                            <span className="flex items-center">
-                              <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
-                                {data.Kategori}
-                              </p>
-                              <p className="font-bold text-sm">
-                                {data.created_at.substring(0, 10)}
-                              </p>
-                            </span>
-                          </div>
-                        </div>
-                      ))}
-                      <div className="flex justify-center w-full md:p-4">
-                        <BannerIklan src={"/BANNER_BATANG.webp"} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="w-full h-full md:w-1/3">
-                <div>
-                  <div></div>
-                </div>
-                <CatatanDisway />
-                <Terpopuler data={data} />
-                <Terkini data={data} />
-              </div>
-            </div>
-            <VideoSection title={"VIDEO"} />
-            <div className="flex justify-center p-5 sm:flex-col">
-              <div>
-                <div className="h-full ">
-                  {data?.slice(11, 15)?.map((data) => (
-                    <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
-                      <Image
-                        lazy
-                        quality={10}
-                        priority
-                        width={150}
-                        height={150}
-                        src={data.ImageURL ? data.ImageURL : ""}
-                        alt=""
-                        className="min-w-40 sm:min-w-28 object-cover object-center"
-                      />
-                      <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                        <Link
-                          href={`/post/${data.id}`}
-                          className="font-semibold "
-                          aria-label="link to post"
-                        >
-                          {data.Judul}
-                        </Link>
-                        <span className="flex items-center">
-                          <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
-                            {data.Kategori}
-                          </p>
-                          <p className="font-bold text-sm">
-                            {data.created_at.substring(0, 10)}
-                          </p>
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="w-full h-full md:w-1/3">
-                <div>
-                  <h2 className="text-lg font-bold">Pilihan</h2>
-                  {data?.slice(0, 4)?.map((data, index) => (
-                    <ul
-                      className=" text-black p-4 flex cursor-pointer bg-white"
-                      key={data.id}
-                    >
-                      <li className="flex items-center justify-center gap-2">
-                        {index + 1}
-                        <Link
-                          href={`/post/${data.id}`}
-                          aria-label="link to post"
-                        >
-                          {data.Judul}
-                        </Link>
-                      </li>
-                    </ul>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* VIDEO */}
-            <NetworkSection title={"NETWORK"} />
-            <div className="container flex justify-center p-5 sm:flex-col">
-              <div>
-                <div className="h-full ">
-                  {data?.slice(16, 20)?.map((data) => (
-                    <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
-                      <Image
-                        lazy
-                        quality={10}
-                        priority
-                        width={150}
-                        height={150}
-                        src={data.ImageURL ? data.ImageURL : ""}
-                        alt=""
-                        className="min-w-40 sm:min-w-28 object-cover object-center"
-                      />
-                      <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                        <Link
-                          href={`/post/${data.id}`}
-                          className="font-semibold "
-                          aria-label="link to post"
-                        >
-                          {data.Judul}
-                        </Link>
-                        <span className="flex items-center">
-                          <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
-                            {data.Kategori}
-                          </p>
-                          <p className="font-bold text-sm">
-                            {data.created_at.substring(0, 10)}
-                          </p>
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="w-full h-full md:w-1/3"></div>
-            </div>
-            <div className="container md:mx-auto">
-              <div className=" flex justify-between">
-                <h2 className="font-semibold">Foto</h2>
-                <h2 className="font-semibold">Lihat Semua</h2>
-              </div>
-              <div className="container mx-auto p-6 bg-black"></div>
-            </div>
-            <div className="container flex justify-center p-5 sm:flex-col">
-              <div>
-                <div className="h-full ">
-                  {data?.slice(21, 24)?.map((data) => (
-                    <div className="flex p-4 sm:py-4 gap-4" key={data.id}>
-                      <Image
-                        lazy
-                        quality={10}
-                        priority
-                        width={150}
-                        height={150}
-                        src={data.ImageURL ? data.ImageURL : ""}
-                        alt=""
-                        className="min-w-40 sm:min-w-28 object-cover object-center"
-                      />
-                      <div className="flex-col min-w-40 sm:min-w-28 h-fit">
-                        <Link
-                          href={`/post/${data.id}`}
-                          className="font-semibold "
-                          aria-label="link to post"
-                        >
-                          {data.Judul}
-                        </Link>
-                        <span className="flex items-center">
-                          <p className="sm:text-xs text-white uppercase font-bold bg-red-500 w-fit p-2 rounded-lg">
-                            {data.Kategori}
-                          </p>
-                          <p className="font-bold text-sm">
-                            {data.created_at.substring(0, 10)}
-                          </p>
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="w-full h-full md:w-1/3"></div>
-            </div>
-
-            {/* <Pagination
-              setPage={setPage}
-              page={page}
-              getData={getData}
-              handleNext={handleNext}
-              handlePrevious={handlePrevious}
-
-              // lenght={currentPost?.lenght}
-            /> */}
+    <main className="flex min-h-screen flex-col items-center">
+      <Header />
+      <div className="flex justify-center p-5 sm:p-6 lg:p-10 flex-col md:flex-row w-full gap-4">
+        <div className="flex flex-col gap-4 w-full md:w-3/4">
+          <Caraousel />
+          <div className="flex flex-col gap-2">
+            <h1 className="text-lg font-bold">{`${
+              title ? title : "Berita Terkini"
+            }`}</h1>
+            {data?.slice(0, 5)?.map((data) => (
+              <CardBerita data={data} key={data.id} />
+            ))}
+          </div>
+          <div className="relative h-32 md:h-60 object-cover">
+            <Image
+              src="/BANNER_DPRD_KOTA.webp"
+              alt="Header"
+              fill
+              objectFit="cover"
+              objectPosition="center"
+              placeholder="blur"
+              loading="eager"
+              blurDataURL="/BANNER_DPRD_KOTA.webp"
+            />
+          </div>
+          {data?.slice(6, 10)?.map((data) => (
+            <CardBerita data={data} key={data.id} />
+          ))}
+          <div className="relative h-32 md:h-60 object-cover">
+            <Image
+              src="/BANNER_BATANG.webp"
+              alt="Header"
+              fill
+              objectFit="cover"
+              objectPosition="center"
+              placeholder="blur"
+              loading="eager"
+              blurDataURL="/BANNER_BATANG.webp"
+            />
           </div>
         </div>
-      ) : (
-        <ContentLoader />
-      )}
-    </>
+        <div className="flex flex-col gap-4 w-full md:w-1/4">
+          <CatatanDisway />
+          <Terpopuler data={data} />
+          <Terkini data={data} />
+        </div>
+      </div>
+      <VideoSection title="Video" />
+      <div className="flex justify-center p-5 sm:p-6 lg:p-10 flex-col md:flex-row w-full gap-4">
+        <div className="flex flex-col gap-4 w-full md:w-3/4">
+          {data?.slice(11, 15)?.map((data) => (
+            <CardBerita data={data} key={data.id} />
+          ))}
+        </div>
+        <div className="flex flex-col gap-4 w-full md:w-1/4">
+          <Pilihan data={data} />
+        </div>
+      </div>
+      <NetworkSection title="Network" />
+      <div className="flex flex-col px-4 md:px-10 gap-2 self-start max-w-full">
+        {data?.slice(16, 20)?.map((data) => (
+          <CardBerita data={data} key={data.id} />
+        ))}
+      </div>
+      <div className="w-full flex justify-between">
+        <h2 className="font-semibold">Foto</h2>
+        <h3 className="font-semibold">Lihat Semua</h3>
+      </div>
+      <div className="flex flex-col px-4 md:px-10 gap-2 self-start max-w-full">
+        {data?.slice(21, 24)?.map((data) => (
+          <CardBerita data={data} key={data.id} />
+        ))}
+      </div>
+    </main>
   );
 }
+
+export default Body;
