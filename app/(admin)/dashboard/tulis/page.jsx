@@ -4,6 +4,9 @@ import { useState } from "react";
 import SidebarDashboard from "../_components/SidebarDashboard";
 import supabase from "@/app/config/supabaseConfig";
 // import QuilEditor from "../_components/QuilEditor";
+const QuillEditor = dynamic(() => import("../_components/QuilEditor"), {
+  ssr: false,
+});
 import dynamic from "next/dynamic";
 
 export default function TulisPage() {
@@ -82,10 +85,10 @@ export default function TulisPage() {
     //  (formData = { ...formData, image_url: publicURL })
   };
 
-  const DynamicComponentWithNoSSR = dynamic(
-    () => import("../_components/QuilEditor"),
-    { ssr: false }
-  );
+  // const DynamicComponentWithNoSSR = dynamic(
+  //   () => import("../_components/QuilEditor"),
+  //   { ssr: false }
+  // );
 
   return (
     <>
@@ -143,7 +146,11 @@ export default function TulisPage() {
               >
                 Isi Berita
               </label>
-              <DynamicComponentWithNoSSR
+              {/* <DynamicComponentWithNoSSR
+                value={Isi_Berita}
+                setChangeText={(e) => setIsiBerita(e)}
+              /> */}
+              <QuillEditor
                 value={Isi_Berita}
                 setChangeText={(e) => setIsiBerita(e)}
               />
